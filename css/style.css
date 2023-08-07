@@ -1,0 +1,585 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@keyframes TxtDownAni {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtDownAni02 {
+  0% {
+    opacity: 0;
+    transform: translate(0, -25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtUpAni {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtrightAni {
+  0% {
+    opacity: 0;
+    transform: translate(-100rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtleftAni {
+  0% {
+    opacity: 0;
+    transform: translate(100rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(0, 9rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 18rem);
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%);
+    outline: 0 solid rgb(255, 255, 255);
+  }
+  80% {
+    outline: 0 solid rgb(255, 255, 255);
+  }
+  100% {
+    transform: translate(-50%, 90rem);
+    outline: 20rem solid rgba(255, 255, 255, 0);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(150%);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:hover {
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+i,
+em,
+address {
+  font-style: normal;
+}
+
+body {
+  line-height: 1;
+  color: #333;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+  font-size: 16rem;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 6.25%;
+  overflow-x: hidden;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* line-height : 3rem + 3rem */
+p {
+  line-height: 1.375;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0 40rem;
+}
+
+.btn_m {
+  display: block;
+  border-radius: 32rem;
+  font-size: 20rem;
+  font-weight: 600;
+  background: #d11a45;
+  padding: 15rem;
+  margin: 0 auto;
+  width: 300rem;
+  transition: 0.2s;
+  animation: TxtUpAni 1s both;
+  animation-delay: 0.7s;
+}
+.btn_m:hover {
+  background-color: #74b567;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 32rem;
+  font-size: 20rem;
+  font-weight: 600;
+  background: #d11a45;
+  padding: 15rem 60rem;
+  margin: 0 auto;
+  transition: 0.2s;
+  color: #fff;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #74b567;
+}
+
+.vbtn {
+  display: inline-block;
+  font-size: 16rem;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 8rem 36rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+}
+
+.obtn {
+  /* 버튼 선 */
+  /* 버튼 선 끝 후버 시 원으로 변화*/
+}
+.obtn .circle_line {
+  position: relative;
+  display: inline-block;
+  width: 70rem;
+  height: 3rem;
+  background: #fff;
+  vertical-align: middle;
+  margin: 0 0 0 5rem;
+  /* 버튼 선 끝 화살표 */
+  /* 버튼 큰 원 */
+}
+.obtn .circle_line::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -5rem;
+  right: -7rem;
+  border-top: 7rem solid transparent;
+  border-bottom: 7rem solid transparent;
+  border-left: 7rem solid #fff;
+  transition: 0s 0.5s;
+}
+.obtn .circle_line::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 0;
+  transform: translate(-100%, -50%);
+  width: 50rem;
+  height: 50rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transition: 1s;
+}
+.obtn:hover .circle_line {
+  /* 버튼 원 훕 시 이동 */
+}
+.obtn:hover .circle_line::before {
+  content: "";
+  position: absolute;
+  top: -7rem;
+  right: -7rem;
+  width: 17rem;
+  height: 17rem;
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+.obtn:hover .circle_line::after {
+  content: "";
+  position: absolute;
+  transform: translate(24rem, -50%);
+  border: 1px solid #fff;
+}
+
+.rbtn {
+  display: inline-block;
+  font-size: 16rem;
+  padding: 12rem 48rem;
+  border-radius: 36rem;
+  color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.mobile_btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 아이폰 반응형 대응 방식 */
+  html {
+    /* vw 390인 디바이스를 기준으로 폰트 사이즈를 pc에서 쓰는 rem과 동일하게 만드는 법 */
+    font-size: 0.2564102564vw;
+    /* 390 size에 맞춤 (16/390*6.25/100) 디자인 사이즈 */
+  }
+}
+/* 그냥 반응형을 만들어버리는 소스 */
+.r_inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+.header .header_wrap {
+  transition: 0.5s;
+}
+.header .header_wrap:hover {
+  background: #fff;
+  transition: 0.5s;
+}
+.header .header_wrap:hover .inner {
+  color: #444444;
+}
+.header .header_wrap:hover .inner h1 .logo {
+  background: url(../images/logo2.png) no-repeat;
+}
+.header .header_wrap .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.header .header_wrap .inner.on {
+  color: #444444;
+}
+.header .header_wrap .inner.on h1 .logo {
+  background: url(../images/logo2.png) no-repeat;
+}
+.header .header_wrap .inner h1 {
+  flex: 0 0 145rem;
+}
+.header .header_wrap .inner h1 .logo {
+  display: block;
+  width: 145px;
+  height: 36px;
+  background: url(../images/logo1.png) no-repeat;
+  transition: 0.3s;
+}
+.header .header_wrap .inner .gnb {
+  margin: 0 0 0 160rem;
+  /* 다단 메뉴 영역 */
+  /* 마우스 갖다댈 때 높이 생기게 하기 */
+}
+.header .header_wrap .inner .gnb::before {
+  content: "";
+  position: absolute;
+  top: 80rem;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #efefef;
+  transition: 0.3s;
+}
+.header .header_wrap .inner .gnb:hover::before {
+  height: 60rem;
+}
+.header .header_wrap .inner .gnb > ul {
+  display: flex;
+}
+.header .header_wrap .inner .gnb > ul > li {
+  position: relative;
+}
+.header .header_wrap .inner .gnb > ul > li > a {
+  display: block;
+  line-height: 80rem;
+  padding: 0 40rem;
+  font-size: 22rem;
+  font-weight: 500;
+}
+.header .header_wrap .inner .gnb > ul > li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  width: 0;
+  height: 1rem;
+  background: #74b567;
+}
+.header .header_wrap .inner .gnb > ul > li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transition: 0.5s;
+  background: #74b567;
+}
+.header .header_wrap .inner .gnb > ul > li:hover .sub_menu {
+  display: flex;
+  gap: 30rem;
+}
+.header .header_wrap .inner .gnb > ul .sub_menu {
+  position: absolute;
+  top: 80rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: -moz-max-content;
+  width: max-content;
+  display: none;
+}
+.header .header_wrap .inner .gnb > ul .sub_menu li:hover a {
+  font-weight: 700;
+}
+.header .header_wrap .inner .gnb > ul .sub_menu a {
+  display: block;
+  color: #444444;
+  font-size: 16rem;
+  line-height: 60rem;
+  width: 100%;
+}
+.header .header_wrap .inner .customer {
+  display: flex;
+  align-items: center;
+  gap: 40rem;
+  font-size: 12rem;
+  font-weight: 500;
+}
+.header .header_wrap .inner .customer ul {
+  display: flex;
+  gap: 20rem;
+}
+.header .header_wrap .inner .customer ul li {
+  position: relative;
+}
+.header .header_wrap .inner .customer ul li ~ li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10rem;
+  transform: translate(0, -50%);
+  width: 1rem;
+  height: 12rem;
+  background: #efefef;
+}
+.header .header_wrap .inner .customer .map i {
+  font-size: 36rem;
+}
+
+.aside {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  z-index: 999;
+}
+.aside.on a {
+  color: #444444;
+}
+.aside.on a::after {
+  border: 1px solid #444444;
+}
+.aside.on li.on a::after {
+  background: #444444;
+}
+.aside ul li a {
+  position: relative;
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 0 16rem 0;
+}
+.aside ul li a span {
+  display: none;
+  font-size: 0;
+}
+.aside ul li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20rem;
+  width: 8rem;
+  height: 8rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.aside ul li.on a span {
+  display: block;
+  transform: translate(-100%, 0);
+}
+.aside ul li.on a::after {
+  position: absolute;
+  top: 50%;
+  left: 20rem;
+  transform: translate(-50%, -50%);
+  width: 12rem;
+  height: 12rem;
+  background: #fff;
+}
+
+/* 탑스크롤 */
+.to_top {
+  position: fixed;
+  bottom: 20rem;
+  right: 20rem;
+  z-index: 999;
+}
+.to_top i {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10rem;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20rem;
+  cursor: pointer;
+}
+
+.footer {
+  background: #f6f6f6;
+  padding: 50rem 0;
+  color: #444444;
+  border-top: 1px solid #ddd;
+}
+.footer .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60rem;
+}
+.footer .content h2 img {
+  width: 100%;
+}
+.footer .content .ft_tel {
+  display: none;
+}
+.footer .left {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8rem;
+}
+.footer .left > ul li {
+  position: relative;
+}
+.footer .left ul li ~ li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10rem;
+  transform: translate(0, -50%);
+  width: 1rem;
+  height: 12rem;
+  background: #7b7b7b;
+}
+.footer .privacy {
+  font-weight: 700;
+}
+.footer .sns {
+  margin: 0 0 8rem 0;
+}
+.footer .sns i {
+  font-size: 30rem;
+}
+.footer .contact,
+.footer .adress {
+  display: flex;
+  gap: 20rem;
+  font-size: 16rem;
+}
+.footer .contact li a,
+.footer .adress li a {
+  line-height: 20rem;
+}
+.footer .adress {
+  margin: 0 0 8rem 0;
+}
+.footer span {
+  font-size: 14rem;
+}/*# sourceMappingURL=style.css.map */
