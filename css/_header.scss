@@ -1,290 +1,258 @@
 .header {
-
-
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 1002;
 
-    .header_wrap {
+    .header_top_area {
+        height: 40rem;
+        background: $color-body;
+        color: $color-line;
+        line-height: 40rem;
+        font-size: 14rem;
 
-        transition: .5s;
+        .content {
+            display: flex;
+            justify-content: space-between;
 
-        // 헤더 워랩이 후버되었을 시
-        &:hover {
-            background: $color-white;
-            transition: .5s;
+            .util {
+                display: flex;
+                justify-content: space-between;
+                gap: 20rem;
 
-            .inner {
-                color: $color-dark;
+                >li {
+                    position: relative;
 
-                h1 {
-                    .logo {
-                        background: url(../images/logo2.png) no-repeat;
+                    ~li::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: -10rem;
+                        transform: translate(0, -50%);
+                        width: 1rem;
+                        height: 10rem;
+                        background: $color-gf;
                     }
                 }
             }
         }
+    }
+
+    .header_menu_area {
+        position: relative;
 
 
-        .inner {
+
+        height: 100rem;
+        font-size: 18rem;
+        font-weight: 600;
+        line-height: 100rem;
+
+        .content {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: $color-white;
-
-            &.on {
-
-                color: $color-dark;
-
-                h1 {
-                    .logo {
-                        background: url(../images/logo2.png) no-repeat;
-                    }
-                }
-
-            }
+            justify-content: flex-start;
+            gap: 72rem;
 
 
-            h1 {
-                .logo {
-                    display: block;
-                    width: 145px;
-                    height: 36px;
-                    background: url(../images/logo1.png) no-repeat;
-                    transition: 0.3s;
-                }
+            .h1 {
+                flex: 0 0 178px;
 
-                flex: 0 0 145rem;
             }
 
             .gnb {
-                margin: 0 0 0 160rem;
 
+                // * {
+                //     outline: 1px solid tomato;
+                // }
 
-                /* 다단 메뉴 영역 */
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 80rem;
-                    left: 0;
-                    width: 100%;
-                    height: 0;
-                    background: $color-gray;
-                    transition: 0.3s;
-                }
+                .depth1 {
 
-                /* 마우스 갖다댈 때 높이 생기게 하기 */
-                &:hover::before {
-                    height: 60rem;
-                }
-
-
-                >ul {
                     display: flex;
+                    gap: 72rem;
 
 
                     >li {
-                        position: relative;
-
-
-                        >a {
-                            display: block;
-                            line-height: 80rem;
-                            padding: 0 40rem;
-                            font-size: 22rem;
-                            font-weight: 500;
-                        }
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            bottom: 0;
-                            width: 0;
-                            height: 1rem;
-                            background: $color-main;
-                        }
-
-                        &:hover::after {
-                            content: "";
-                            position: absolute;
-                            width: 100%;
-                            transition: 0.5s;
-                            background: $color-main;
-                        }
-
-                        &:hover {
-                            .sub_menu {
-                                display: flex;
-                                gap: 30rem;
-                            }
-                        }
-
-                    }
-
-
-                    .sub_menu {
-                        position: absolute;
-                        top: 80rem;
-                        left: 50%;
-                        transform: translate(-50%, 0);
-                        width: max-content;
-
-                        display: none;
-
-                        li:hover {
-
-                            a {
-                                font-weight: 700;
-                            }
-
-                        }
 
                         a {
                             display: block;
-                            color: $color-dark;
-                            font-size: 16rem;
-                            line-height: 60rem;
-                            width: 100%;
+                        }
+
+                        &:hover {
+
+                            .mega_box {
+
+                                display: block;
+
+                            }
                         }
                     }
-                }
-            }
 
-            .customer {
-                display: flex;
-                align-items: center;
-                gap: 40rem;
-                font-size: 12rem;
-                font-weight: 500;
-
-                ul {
-                    display: flex;
-                    gap: 20rem;
-
-                    li {
-                        position: relative;
-
-                        ~li::before {
-                            content: "";
-                            position: absolute;
-                            top: 50%;
-                            left: -10rem;
-                            transform: translate(0, -50%);
-                            width: 1rem;
-                            height: 12rem;
-                            background: $color-gray;
-                        }
-                    }
-                }
-
-                .map {
-                    i {
-                        font-size: 36rem;
-                    }
-                }
-            }
-
-        }
-    }
-}
+                    .mega_box {
+                        display: none;
 
 
-.aside {
-    position: fixed;
-    top: 50%;
-    transform: translate(0, -50%);
-    left: 0;
-    z-index: 999;
-
-    &.on {
-        a {
-            color: $color-dark;
-
-            &::after {
-                border: 1px solid $color-dark;
-            }
-        }
-
-        li.on {
-            a {
-                &::after {
-                    background: $color-dark;
-                }
-            }
-        }
-
-    }
-
-    ul {
-        li {
-            a {
-                position: relative;
-                display: block;
-                width: 8rem;
-                height: 8rem;
-                margin: 0 0 16rem 0;
-
-                span {
-                    display: none;
-                    font-size: 0;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    left: 20rem;
-                    width: 8rem;
-                    height: 8rem;
-                    transform: translate(-50%, -50%);
-                    border: 1px solid $color-white;
-                    border-radius: 50%;
-                    transition: 0.3s;
-                }
-            }
-
-            &.on {
-                a {
-                    span {
-                        display: block;
-                        transform: translate(-100%, 0);
-                    }
-
-                    &::after {
                         position: absolute;
-                        top: 50%;
-                        left: 20rem;
-                        transform: translate(-50%, -50%);
-                        width: 12rem;
-                        height: 12rem;
-                        background: $color-white;
+                        left: 0;
+                        top: 100rem;
+                        transform: translate(0, 0);
+                        background: url(../images/subGnb.png) no-repeat center center/cover;
+                        height: 400rem;
+                        width: 100%;
+                        border-top: 1px solid #ededee;
+                        border-bottom: 2px solid $color-main;
+
+
+                        .content {
+                            display: flex;
+                            justify-content: flex-start;
+                            gap: 0;
+                            height: 100%;
+
+                            position: relative;
+
+                            .mega_title {
+                                width: 299rem;
+                                background: url(../images/subGnb_1depth.png) no-repeat center center/cover;
+                                line-height: 1;
+                                padding: 35rem 40rem;
+
+                                h2 {
+                                    display: block;
+                                    font-size: 32rem;
+                                    font-weight: 400;
+                                    color: $color-main;
+                                    margin: 0 0 16rem 0;
+                                }
+
+                                p {
+                                    font-size: 14rem;
+                                }
+                            }
+
+                            .depth2 {
+
+
+                                display: flex;
+                                justify-content: flex-start;
+                                flex-direction: column;
+                                gap: 0;
+
+                                padding: 35rem 40rem;
+                                font-weight: 400;
+                                line-height: 1;
+                                height: 100%;
+                                width: 300rem;
+
+                                border-right: 1px solid #ededee;
+
+                                position: relative;
+
+                                >li {
+                                    &:hover {
+                                        background: $color-main;
+
+                                        >a {
+                                            color: $color-white;
+                                        }
+
+                                        .depth3 {
+                                            display: block;
+                                        }
+                                    }
+
+                                    >a {
+                                        display: block;
+                                        width: 300rem;
+                                        height: 36rem;
+                                        line-height: 36rem;
+                                        padding: 0 10rem;
+                                    }
+
+                                    .depth3 {
+
+
+                                        display: none;
+
+                                        position: absolute;
+                                        left: 100%;
+                                        top: 0;
+
+                                        width: 100vh;
+                                        height: 400rem;
+
+
+                                        ul {
+                                            display: flex;
+                                            flex-direction: column;
+
+                                            padding: 35rem 40rem;
+                                            width: max-content;
+                                            height: 400rem;
+
+                                            li {
+
+                                                width: 190rem;
+
+                                                &:hover {
+                                                    a {
+                                                        color: $color-main;
+                                                    }
+                                                }
+
+                                                a {
+                                                    display: block;
+                                                    font-size: 16rem;
+                                                    height: 36rem;
+                                                    line-height: 36rem;
+
+                                                }
+                                            }
+                                        }
+
+                                        .long_menu {
+                                            flex-wrap: wrap;
+                                            width: max-content;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
                     }
+
+
+
                 }
             }
         }
     }
-}
 
+    .header_bottom_area {
+        height: 32rem;
+        background: $color-main;
+        color: $color-line;
+        font-size: 16rem;
+        line-height: 32rem;
 
-/* 탑스크롤 */
-.to_top {
-    position: fixed;
-    bottom: 20rem;
-    right: 20rem;
-    z-index: 999;
-
-    i {
-        color: $color-white;
-        background: $color-rgba05;
-        padding: 10rem;
-        vertical-align: middle;
-        text-align: center;
-        border-radius: 50%;
-        font-size: 20rem;
-        cursor: pointer;
+        .content {
+            .util {
+                display: flex;
+                justify-content: center;
+                gap: 32rem;
+            }
+        }
     }
+
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 48;
+
+        vertical-align: middle;
+    }
+
 }
