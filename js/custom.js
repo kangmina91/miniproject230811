@@ -2,29 +2,38 @@ $(function () {
 
 
 
-  /* visual */
-  const MainSwiper = new Swiper('.main_slide', {
-    effect: 'fade',
-    speed: 1400,
-    loop: true,
+  const MainSlide = new Swiper('.main_slide', {
+    loop: false,
+    parallex: true,
+    speed: 600,
     autoplay: {
-      delay: 5000,
+      delay: 2500,
       disableOnInteraction: false,
     },
-    navigation: {
-      nextEl: '.vnext',
-      prevEl: '.vprev',
-    },
-    pagination: {
-      el: '.vpaging',
-      clickable: true,
-    },
     on: {
-      slideChange: function () {
-        $(".swiper-slide:eq(" + (this.realIndex + 1) + ")").addClass('on').siblings().removeClass("on")
+      slideChangeTransitionStart: function () {
+        $('.MainVisual .dots li')
+          .eq(this.realIndex)
+          .addClass('on')
+          .siblings()
+          .removeClass('on')
       }
-    },
+    }
   });
+  $('.MainVisual .arrows .left').on('click', function () {
+    MainSlide.slidePrev();
+  });
+  $('.MainVisual .arrows .right').on('click', function () {
+    MainSlide.slideNext();
+  });
+
+
+  $('.MainVisual .dots li').on('click', function () {
+    const idx = $(this).index();
+    $(this).addClass('on').siblings().removeClass('on')
+    MainSlide.slideTo(idx);
+  })
+
 
 
   // 스와이퍼 카드 뉴스 슬라이드

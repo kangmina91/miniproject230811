@@ -1,4 +1,4 @@
-.header {
+.Header {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,7 +41,7 @@
 
     .header_menu_area {
         position: relative;
-
+        background: $color-white;
 
 
         height: 100rem;
@@ -62,9 +62,7 @@
 
             .gnb {
 
-                // * {
-                //     outline: 1px solid tomato;
-                // }
+
 
                 .depth1 {
 
@@ -152,7 +150,9 @@
                                     &:hover {
                                         background: $color-main;
 
+
                                         >a {
+                                            background: url(../images/depth_2_arrow.png) no-repeat 65% center;
                                             color: $color-white;
                                         }
 

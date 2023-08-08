@@ -1,0 +1,33 @@
+.Main {
+    .MainVisual {
+        position: relative;
+
+
+        .main_slide {
+            .itm {
+                position: relative;
+                overflow: hidden;
+                height: calc(100vh);
+
+                .slide-img {
+                    position: absolute;
+                    inset: 0 0 0 0;
+                }
+
+
+            }
+
+            .itm01 .slide-img {
+                background: url(../images/egovtemp_202307131204032200.jpg) no-repeat center top/cover;
+            }
+
+            .itm02 .slide-img {
+                background: url(../images/egovtemp_202304140407042880.jpg) no-repeat center top/cover;
+            }
+
+            .itm03 .slide-img {
+                background: url(../images/egovtemp_202306010517489480.png) no-repeat center top/cover;
+            }
+        }
+    }
+}
