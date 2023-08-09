@@ -1,9 +1,12 @@
 .Header {
-    position: fixed;
+    // sticky를 쓰려면 부모 요소 over-flow 없어야 한다.
+
+    position: relative;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1002;
+    z-index: 1001;
+
+
+    height: auto;
 
     .header_top_area {
         height: 40rem;
@@ -39,9 +42,42 @@
         }
     }
 
+
+    // header.on이 되었을 때 메뉴 영역 고정시키기
+    &.on {
+
+        .header_menu_area {
+
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1002;
+
+            height: 80rem;
+            line-height: 80rem;
+            box-shadow: 1px 1px 5px #ddd;
+
+            transition: all 0.5s ease;
+
+            .content {
+                .gnb {
+                    .depth1 {
+
+                        // 메뉴 영역의 위치 변경으로 인한 top 수정.
+                        .mega_box {
+                            position: absolute;
+                            top: 80rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     .header_menu_area {
-        position: relative;
-        background: $color-white;
+
 
 
         height: 100rem;
@@ -49,7 +85,10 @@
         font-weight: 600;
         line-height: 100rem;
 
+        background: $color-white;
+
         .content {
+
             display: flex;
             justify-content: flex-start;
             gap: 72rem;
@@ -65,15 +104,14 @@
 
 
                 .depth1 {
-
                     display: flex;
-                    gap: 72rem;
-
 
                     >li {
 
-                        a {
+                        >a {
                             display: block;
+                            word-break: keep-all;
+                            padding: 0 32rem;
                         }
 
                         &:hover {
@@ -92,13 +130,13 @@
 
                         position: absolute;
                         left: 0;
-                        top: 100rem;
+                        top: 140rem;
                         transform: translate(0, 0);
                         background: url(../images/subGnb.png) no-repeat center center/cover;
                         height: 400rem;
                         width: 100%;
                         border-top: 1px solid #ededee;
-                        border-bottom: 2px solid $color-main;
+                        border-bottom: 2rem solid $color-main;
 
 
                         .content {

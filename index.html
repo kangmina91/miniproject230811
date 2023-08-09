@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="../css/jquery.mb.YTPlayer.min.css">
     <link rel="stylesheet" href="./css/style.css?ver=1.0">
 
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/swiper.js"></script>
     <script src="./js/slick.min.js"></script>
+    <script src="../js/jquery.mb.YTPlayer.min.js"></script>
     <script src="./js/custom.js?ver=1.0" defer></script>
 </head>
 
@@ -25,7 +27,6 @@
         <header class="Header">
             <div class="header_top_area">
                 <div class="inner content">
-
                     <ul class="left util">
                         <li><a href="">세종캠퍼스</a></li>
                         <li><a href="">의료원</a></li>
@@ -57,7 +58,7 @@
             <div class="header_menu_area">
                 <div class="inner content">
                     <h1>
-                        <a href="/" class="logo">
+                        <a href="https://www.korea.ac.kr/index.jsp" class="logo" target="_blank">
                             <img src="./images/h1_logo_new.svg" alt="고려대학교">
                         </a>
                     </h1>
@@ -712,47 +713,407 @@
         </header>
         <main role="Main" class="Main">
 
-            <section class="MainVisual">
+            <section id="MainVisual">
                 <h2 class="blind">메인 슬라이드</h2>
-                <div class="swiper main_slide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide itm itm01">
-                            <div class="slide-img" data-swiper-parallax="50%">
-                                <span class="blind"> 고려대학교 메인 이미지 </span>
+                <div class="quick_menu">
+                    <ul>
+                        <li class="q04 first"><a href="/">KU 문의함</a></li>
+                        <li class="q01"><a href="/">학사일정</a></li>
+                        <li class="q02"><a href="/">주요 사이트</a></li>
+                        <li class="q03"><a href="/">조직도</a></li>
+                        <li class="q05"><a href="/">오시는길</a></li>
+                        <li class="q06"><a href="/">교육정보</a></li>
+                        <li class="q07"><a href="/">견학신청</a></li>
+                        <li class="q08 last"><a href="/">KU명예의전당</a></li>
+                    </ul>
+                </div>
+                <div class="main_video">
+                    <div id="bgndVideo" class="player">
+                        My video
+                    </div>
+                    <div class="ctr">
+                        <span class="material-symbols-outlined pause">
+                            pause_circle
+                        </span>
+                        <span class="material-symbols-outlined play">
+                            play_circle
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <section id="MainNews" class="MainNews section">
+                <h2 class="blind">메인 뉴스 KU Today</h2>
+                <div class="title">
+                    <h2>KU Today</h2>
+                </div>
+                <div class="inner content">
+                    <div class="swiper news_slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide itm itm01">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202307210409282880.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>"송판 격파!" 태권도로 하나된 전 세계 학생들</strong>
+                                        <p>
+                                            국제하계대학(ISC) 참가 외국인 학생들, 한국 전통 무예 배우는 시간 가져 </p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm02">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202307170129177830.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>“우즈베크 온 韓봉사단처럼 누군가에 꿈 심고 싶어”</strong>
+                                        <p>
+                                            [언론에서 본 고대] “한국어를 잘 못하던 제가 우즈베키스탄에 찾아왔던 대학생들을 롤모델로 삼아 ‘코리안 드림’을 이뤘습니다.” </p>
+                                        <span>Read More</span>
+
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="swiper-slide itm itm02">
-                            <div class="slide-img" data-swiper-parallax="50%">
-                                <span class="blind"> 고려대학교 메인 이미지 </span>
-                            </div>
+                        <div class="ctr">
+                            <div class="swiper-pagination vpaging"></div>
                         </div>
-                        <div class="swiper-slide itm itm03">
-                            <div class="slide-img" data-swiper-parallax="50%">
-                                <span class="blind"> 고려대학교 메인 이미지 </span>
-                            </div>
+                    </div>
+                    <div class="r_news rn01">
+                        <div class="card">
+                            <a href="">
+                                <div class="img_box">
+                                    <img src="./images/egovtemp_202307131209427390.jpg" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+                                    <p>[언론에서 본 고대] 대학교 브랜드평판 2023년 7월 빅데이터 분석결과 1위 고려대학교로 선정
+                                    </p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="r_news rn02">
+                        <div class="card">
+                            <a href="">
+                                <div class="img_box">
+                                    <img src="./images/egovtemp_202307131204032200.jpg" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <strong>올해 기초 연구사업 리더 연구 부문, 고려대 '최다 선정'</strong>
+                                    <p>화학, 기계, 소재 등 7개 분야 중 3개 선정</p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="f_news fn01">
+                        <div class="card">
+                            <a href="">
+                                <div class="txt_box">
+                                    <strong>뇌사상태 빠진 고려대생, 6명에 심장 등 기증해 생명 선물</strong>
+                                    <p>[언론에서 본 고대] 한국장기조직기증원은 지난달 27일 뇌사상태였던 이주용(24)씨가 서울 아산병원에서 심장, 폐, 간, 좌우 신장과 췌장, 좌우
+                                        안구를 6명에 기증</p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="f_news fn02">
+                        <div class="card">
+                            <a href="">
+                                <strong>
+                                    고대 소식 더 보기
+                                    <span class="material-symbols-outlined">
+                                        arrow_circle_right
+                                    </span>
+                                </strong>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <ul class="arrows">
-                    <li class="left">
-                        <span class="blind">이전</span>
-                    </li>
-                    <li class="right">
-                        <span class="blind">이후</span>
-                    </li>
-                </ul>
-                <ul class="dots">
-                    <li><span>01</span></li>
-                    <li><span>02</span></li>
-                    <li><span>03</span></li>
-                    <li><span>04</span></li>
-                    <li><span>05</span></li>
-                </ul>
             </section>
+            <section id="MainResearch" class="MainResearch section">
+                <h2 class="blind">메인 연구 성과 뉴스</h2>
+                <div class="title">
+                    <h2>연구성과</h2>
+                </div>
+                <div class="inner content">
+                    <div class="swiper research_slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide itm itm01">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202308040238023870.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>‘노화’, 변성된 앞이마엽 활성화 패턴 이끌며 이중과제 수행 능력 감소시켜</strong>
+                                        <p>김형동 교수팀, 국제저명학술지 ‘Journal of NeuroEngineering and Rehabilitation’ 논문 게재</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm02">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202308040236287090.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>초고심도 초고해상도 현미경 개발</strong>
+                                        <p>최원식-심상희 교수팀 연구결과, 권위 학술지 Nature Communications 게재돼</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm03">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202307210404301390.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>획기적인 가솔린 차량(하이브리드 포함) 공해 물질 제거 기술 개발</strong>
+                                        <p>연구결과, 촉매분야 국제학술지 Applied Catalysis B: Environmental 게재돼 배기가스 내 유해물질 배출량의 효과적
+                                            감소 기대돼</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm04">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202306210501480630.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>이산화탄소로 화장품 원료 만든다</strong>
+                                        <p>김웅 교수팀 연구결과 국제학술지 Advanced Energy Materials (Inside Front Cover) 게재</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f_re_news fnr01">
+                        <div class="card">
+                            <a href="">
+                                <div class="img_box">
+                                    <img src="./images/egovtemp_202307131209427390.jpg" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+                                    <p>[언론에서 본 고대] 대학교 브랜드평판 2023년 7월 빅데이터 분석결과 1위 고려대학교로 선정
+                                    </p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="f_re_news fnr02">
+                        <div class="card">
+                            <a href="">
+                                <div class="img_box">
+                                    <img src="./images/egovtemp_202307131204032200.jpg" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <strong>올해 기초 연구사업 리더 연구 부문, 고려대 '최다 선정'</strong>
+                                    <p>화학, 기계, 소재 등 7개 분야 중 3개 선정</p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="f_re_news fnr03">
+                        <div class="card">
+                            <a href="">
+                                <div class="img_box">
+                                    <img src="./images/egovtemp_202307131204032200.jpg" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <strong>올해 기초 연구사업 리더 연구 부문, 고려대 '최다 선정'</strong>
+                                    <p>화학, 기계, 소재 등 7개 분야 중 3개 선정</p>
+                                    <span>Read More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="MainEvent" class="MainEvent section">
+                <h2 class="blind">메인 행사 뉴스</h2>
+                <div class="title">
+                    <h2>주요행사</h2>
+                </div>
+                <div class="inner content">
+                    <div class="swiper event_slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide itm itm01">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202308040238023870.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>‘노화’, 변성된 앞이마엽 활성화 패턴 이끌며 이중과제 수행 능력 감소시켜</strong>
+                                        <p>김형동 교수팀, 국제저명학술지 ‘Journal of NeuroEngineering and Rehabilitation’ 논문 게재</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm02">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202308040236287090.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>초고심도 초고해상도 현미경 개발</strong>
+                                        <p>최원식-심상희 교수팀 연구결과, 권위 학술지 Nature Communications 게재돼</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm03">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202307210404301390.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>획기적인 가솔린 차량(하이브리드 포함) 공해 물질 제거 기술 개발</strong>
+                                        <p>연구결과, 촉매분야 국제학술지 Applied Catalysis B: Environmental 게재돼 배기가스 내 유해물질 배출량의 효과적
+                                            감소 기대돼</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide itm itm04">
+                                <a href="">
+                                    <div class="img_box">
+                                        <img src="./images/egovtemp_202306210501480630.jpg" alt="">
+                                    </div>
+                                    <div class="txt_box">
+                                        <strong>이산화탄소로 화장품 원료 만든다</strong>
+                                        <p>김웅 교수팀 연구결과 국제학술지 Advanced Energy Materials (Inside Front Cover) 게재</p>
+                                        <span>Read More</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_news">
+                        <ul>
+                            <a href="">주요행사 더 보기</a>
+                            <li>
+                                <a href="">
+                                    <div class="txt_box">
+                                        <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+
+                                        <span>2023-07-26</span> <span>Read More</span>
+                                    </div>
+                                </a>
+                            </li>
 
 
+                            <li>
+                                <a href="">
+                                    <div class="txt_box">
+                                        <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+
+                                        <span>2023-07-25</span> <span>Read More</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <div class="txt_box">
+                                        <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+
+                                        <span>2023-07-25</span> <span>Read More</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <div class="txt_box">
+                                        <strong>[대학교 브랜드평판] 1위 고려대·2위 서울대·3위 연세대</strong>
+
+                                        <span>2023-07-25</span> <span>Read More</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </main>
-        <footer class="Footer"></footer>
+        <footer class="Footer">
+            <h2 class="blind">사이트 정보</h2>
+            <div class="content">
+                <div class="ft inner">
+                    <div class="left">
+                        <h2><a href=""><a href=""><img src="./images/logo.svg" alt=""></a></h2>
+                        <ul class="contact">
+                            <li><a href="">경기도 고양시 일산동구 일산로 142 유니테크빌 927</a></li>
+                            <li><a href="tel:+82-31-920-6600">Tel: +82-31-920-6600</a></li>
+                            <li><a href="tel:+82-31-920-6607">Fax: +82-31-920-6607</a></li>
+                        </ul>
+                        <span>&copy;2022 Tescom. All Rights Reserved.</span>
+                    </div>
+                    <div class="right">
+                        <ul class="fm">
+                            <li>
+                                <a href="">Product</a>
+                                <ul>
+                                    <li><a href="">Shiedl Boxes</a></li>
+                                    <li><a href="">RF Measurement Systems</a></li>
+                                    <li><a href="">Testers</a></li>
+                                    <li><a href="">Automation Systems</a></li>
+                                    <li><a href="">Antennas & Accessories</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Solutions</a>
+                                <ul>
+                                    <li><a href="">Applications</a></li>
+                                    <li><a href="">Technologies</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Support</a>
+                                <ul>
+                                    <li><a href="">Downloads</a></li>
+                                    <li><a href="">Request Quote</a></li>
+                                    <li><a href="">Technical Support</a></li>
+                                    <li><a href="">Services</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">About Us</a>
+                                <ul>
+                                    <li><a href="">Tescom Stories</a></li>
+                                    <li><a href="">Out Values</a></li>
+                                    <li><a href="">Find Us</a></li>
+                                    <li><a href="">Insights</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="fb">
+                    <div class="fb_box inner">
+                        <ul class="icon">
+                            <li><a href=""><i class="xi-youtube"></i></a></li>
+                            <li><a href=""><i class="xi-facebook"></i></a></li>
+                            <li><a href=""><i class="xi-instagram"></i></a></li>
+                        </ul>
+                        <ul class="reserved">
+                            <span>&copy;2022 Tescom. All Rights Reserved.</span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 

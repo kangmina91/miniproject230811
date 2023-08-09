@@ -1,33 +1,586 @@
 .Main {
-    .MainVisual {
+
+
+    // 메인 비주얼
+    #MainVisual {
         position: relative;
+        height: calc(100vh - 172rem);
 
+        .quick_menu {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 48rem;
+            transition: all 0.2s ease;
+            z-index: 999;
 
-        .main_slide {
-            .itm {
+            &:hover {
+                width: 168rem;
+
+                >ul {
+                    width: 168rem;
+
+                    >li {
+                        >a {
+                            text-indent: 0;
+                        }
+                    }
+                }
+            }
+
+            >ul {
+                width: 48rem;
+                font-size: 16rem;
+
+                background-color: #70122b;
+                transition: all 0.2s ease;
+                letter-spacing: -1rem;
+                margin: 80rem 0 0 0;
+
+                >li {
+                    &.q01 {
+                        >a {
+                            background-position: 12rem 12rem;
+                        }
+                    }
+
+                    &.q02 {
+                        >a {
+                            background-position: 12rem -47rem;
+                        }
+                    }
+
+                    &.q03 {
+                        >a {
+                            background-position: 12rem -106rem;
+                        }
+                    }
+
+                    &.q04 {
+                        >a {
+                            background-position: 12rem -163rem;
+                        }
+                    }
+
+                    &.q05 {
+                        >a {
+                            background-position: 12rem -222rem;
+                        }
+                    }
+
+                    &.q06 {
+                        >a {
+                            background-position: 12rem -340rem;
+                        }
+                    }
+
+                    &.q07 {
+                        >a {
+                            background-position: 12rem -282rem;
+                        }
+                    }
+
+                    &.q08 {
+                        >a {
+                            background-position: 12rem -458rem;
+                        }
+                    }
+
+                    >a {
+                        display: block;
+                        color: #fff;
+                        height: 48rem;
+                        padding: 16rem 0 16rem 48rem;
+                        background: url('../images/quickLink_s.png') no-repeat;
+                        text-indent: -5000rem;
+
+                        &:hover {
+                            background-color: #b58d74;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main_video {
+            .ctr {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(0, calc(-50% + 100px));
+                margin: 560rem 0 0 -585rem;
+
+                span {
+                    font-size: 56rem;
+                    color: $color-white;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    // 메인 뉴스 섹션
+    #MainNews {
+        background: #f4f4f4;
+
+        .content {
+            display: grid;
+            grid-gap: 36rem;
+            grid-template-areas:
+                "s_n s_n r_n01"
+                "s_n s_n r_n01"
+                "s_n s_n r_n02"
+                "f_n01 f_n02 r_n02";
+            // grid-area: s_news;
+            max-width: 1200rem;
+            padding: 15rem;
+
+            .news_slide {
                 position: relative;
-                overflow: hidden;
-                height: calc(100vh);
 
-                .slide-img {
-                    position: absolute;
-                    inset: 0 0 0 0;
+                grid-area: s_n;
+
+                height: 600rem;
+                width: 834rem;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                .itm {
+                    border-top: 4rem solid $color-main;
+                    background: $color-white;
+
+                    .img_box {
+                        height: 400rem;
+                        overflow: hidden;
+
+                        margin: 0 0 24rem 0;
+
+                        img {
+
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                            transition: 0.5s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+
+                    .txt_box {
+                        padding: 0 20rem;
+
+                        strong {
+                            display: block;
+                            font-size: 32rem;
+                            font-weight: 600;
+                            line-height: 30rem;
+                            margin: 0 0 22rem 0;
+                        }
+
+                        p {
+                            font-size: 16rem;
+                            line-height: 20rem;
+                            margin: 0 0 8rem 0;
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 20rem;
+                            font-size: 16rem;
+                            font-weight: 600;
+
+                        }
+                    }
+                }
+            }
+
+            .r_news {
+                width: 300rem;
+                height: 400rem;
+                background: $color-white;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                position: relative;
+
+                &.rn01 {
+                    grid-area: r_n01;
+                }
+
+                &.rn02 {
+                    grid-area: r_n02;
+                }
+
+                .card {
+                    border-top: 4rem solid $color-main;
+                    background: $color-white;
+
+                    .img_box {
+                        height: 200rem;
+                        overflow: hidden;
+
+                        margin: 0 0 24rem 0;
+
+                        img {
+
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                            transition: 0.5s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+
+                    .txt_box {
+                        padding: 0 20rem;
+
+                        strong {
+                            display: block;
+                            font-size: 20rem;
+                            font-weight: 600;
+                            line-height: 24rem;
+                            margin: 0 0 18rem 0;
+                        }
+
+                        p {
+                            font-size: 16rem;
+                            line-height: 20rem;
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 20rem;
+                            font-size: 16rem;
+                            font-weight: 600;
+
+                        }
+                    }
+                }
+            }
+
+            .f_news {
+                width: 400rem;
+                height: 200rem;
+                background: $color-white;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                position: relative;
+
+                &.fn01 {
+                    grid-area: f_n01;
+
+                    .card {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+
+                        padding: 20rem;
+
+                        .txt_box {
+                            strong {
+                                display: block;
+                                font-size: 20rem;
+                                font-weight: 600;
+                                line-height: 24rem;
+                                margin: 0 0 18rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 20rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
+                &.fn02 {
+                    grid-area: f_n02;
+                    position: relative;
+
+
+                    .card {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+
+                        padding: 20rem;
+
+                        strong {
+                            display: block;
+                            text-align: center;
+                            line-height: 156rem;
+                            font-size: 32rem;
+                            font-weight: 600;
+
+                            .material-symbols-outlined {
+                                font-variation-settings:
+                                    'FILL' 100,
+                                    'wght' 600,
+                                    'GRAD' 100,
+                                    'opsz' 48;
+
+                                vertical-align: text-top;
+
+                                font-size: 40rem;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    // 메인 연구 성과 섹션
+    #MainResearch {
+        background: #f4f4f4;
+
+        .content {
+            display: grid;
+            grid-gap: 36rem;
+            grid-template-areas:
+                "s_n s_n s_n"
+                "f_n01 f_n02 f_n03";
+            // grid-area: s_news;
+            max-width: 1200rem;
+            padding: 15rem;
+
+            .research_slide {
+                position: relative;
+
+                grid-area: s_n;
+
+                height: 400rem;
+                width: 1170rem;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                .itm {
+                    border-top: 4rem solid $color-main;
+
+                    background: $color-white;
+
+                    display: grid;
+                    grid-template-columns: 2fr 400rem;
+
+
+                    .img_box {
+                        overflow: hidden;
+                        height: 400rem;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                            transition: 0.5s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+                    .txt_box {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 400rem;
+                        height: 100%;
+                        padding: 20rem;
+                        border-left: 1rem solid $color-line;
+
+                        strong {
+                            display: block;
+                            font-size: 24rem;
+                            font-weight: 600;
+                            line-height: 30rem;
+                            margin: 0 0 22rem 0;
+                        }
+
+                        p {
+                            font-size: 16rem;
+                            line-height: 20rem;
+                            margin: 0 0 8rem 0;
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 20rem;
+                            font-size: 16rem;
+                            font-weight: 600;
+
+                        }
+                    }
+                }
+            }
+
+            .f_re_news {
+                width: 366rem;
+                height: 400rem;
+                background: $color-white;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                position: relative;
+
+                &.fnr01 {
+                    grid-area: f_n01;
+                }
+
+                &.fnr02 {
+                    grid-area: f_n02;
                 }
 
 
+                &.fnr03 {
+                    grid-area: f_n03;
+                }
+
+                .card {
+                    border-top: 4rem solid $color-main;
+                    background: $color-white;
+
+                    .img_box {
+                        height: 200rem;
+                        overflow: hidden;
+
+                        margin: 0 0 24rem 0;
+
+                        img {
+
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                            transition: 0.5s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+
+                    .txt_box {
+                        padding: 0 20rem;
+
+                        strong {
+                            display: block;
+                            font-size: 20rem;
+                            font-weight: 600;
+                            line-height: 24rem;
+                            margin: 0 0 18rem 0;
+                        }
+
+                        p {
+                            font-size: 16rem;
+                            line-height: 20rem;
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 20rem;
+                            font-size: 16rem;
+                            font-weight: 600;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #MainEvent {
+        .content {
+            display: grid;
+            grid-gap: 36rem;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200rem;
+            padding: 15rem;
+
+            .event_slide {
+                position: relative;
+
+                height: 400rem;
+                width: 800rem;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                .itm {
+                    border-top: 4rem solid $color-main;
+
+                    background: $color-white;
+
+                    display: grid;
+                    grid-template-columns: 2fr 400rem;
+
+
+                    .img_box {
+                        overflow: hidden;
+                        height: 400rem;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                            transition: 0.5s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+                    .txt_box {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 400rem;
+                        height: 100%;
+                        padding: 20rem;
+                        border-left: 1rem solid $color-line;
+
+                        strong {
+                            display: block;
+                            font-size: 24rem;
+                            font-weight: 600;
+                            line-height: 30rem;
+                            margin: 0 0 22rem 0;
+                        }
+
+                        p {
+                            font-size: 16rem;
+                            line-height: 20rem;
+                            margin: 0 0 8rem 0;
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 20rem;
+                            font-size: 16rem;
+                            font-weight: 600;
+
+                        }
+                    }
+                }
             }
 
-            .itm01 .slide-img {
-                background: url(../images/egovtemp_202307131204032200.jpg) no-repeat center top/cover;
-            }
-
-            .itm02 .slide-img {
-                background: url(../images/egovtemp_202304140407042880.jpg) no-repeat center top/cover;
-            }
-
-            .itm03 .slide-img {
-                background: url(../images/egovtemp_202306010517489480.png) no-repeat center top/cover;
-            }
+            .right_news {}
         }
     }
 }

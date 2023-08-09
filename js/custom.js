@@ -1,10 +1,57 @@
 $(function () {
 
+  // 스크롤 시 헤더 
+  $(window).on('scroll', function () {
+    let sct = $(window).scrollTop();
+    if (sct > 172) {
+      $('.Header').addClass('on');
+    } else {
+      $('.Header').removeClass('on');
+    }
+  });
 
 
-  const MainSlide = new Swiper('.main_slide', {
-    loop: false,
-    parallex: true,
+
+
+  // 메인 비디오
+  $('#bgndVideo').YTPlayer({
+    videoURL: 'MQJ2Edjos8g',
+    containment: '#MainVisual',
+    autoPlay: true,
+    showControls: false,
+    playOnlyIfVisible: true,
+  });
+
+  // 메인 비디오 컨트롤
+  $('#MainVisual .pause').on('click', function () {
+    $('#bgndVideo').YTPPause();
+  })
+  $('#MainVisual .play').on('click', function () {
+    $('#bgndVideo').YTPPlay();
+  })
+
+  /* 첫번째 섹션 */
+  const CardSwiper = new Swiper('.news_slide', {
+    effect: 'fade',
+    speed: 500,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.vnext',
+      prevEl: '.vprev',
+    },
+    pagination: {
+      el: '.vpaging',
+      clickable: true,
+    },
+  });
+
+  /* 두번째 연구 성과 섹션 */
+  const ResearchSlide = new Swiper('.research_slide', {
+    loop: true,
     speed: 600,
     autoplay: {
       delay: 2500,
@@ -12,7 +59,7 @@ $(function () {
     },
     on: {
       slideChangeTransitionStart: function () {
-        $('.MainVisual .dots li')
+        $('.MainResearch .dots li')
           .eq(this.realIndex)
           .addClass('on')
           .siblings()
@@ -20,43 +67,49 @@ $(function () {
       }
     }
   });
-  $('.MainVisual .arrows .left').on('click', function () {
-    MainSlide.slidePrev();
+  $('.MainResearch .arrows .left').on('click', function () {
+    ResearchSlide.slidePrev();
   });
-  $('.MainVisual .arrows .right').on('click', function () {
-    MainSlide.slideNext();
+  $('.MainResearch .arrows .right').on('click', function () {
+    ResearchSlide.slideNext();
   });
 
 
-  $('.MainVisual .dots li').on('click', function () {
+  $('.MainResearch .dots li').on('click', function () {
     const idx = $(this).index();
     $(this).addClass('on').siblings().removeClass('on')
-    MainSlide.slideTo(idx);
+    ResearchSlide.slideTo(idx);
   })
 
-
-
-  // 스와이퍼 카드 뉴스 슬라이드
-  const newsSlide = new Swiper('.news_slide', {
+  // 세번째 행사 섹션 슬라이드
+  const EventSlide = new Swiper('.event_slide', {
     loop: false,
     slidesPerView: 1,
     slidesPerGroupSkip: 1,
     spaceBetween: 0,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-    pagination: {
-      el: ".swiper-pagination02",
-      type: "fraction",
+    on: {
+      slideChangeTransitionStart: function () {
+        $('.MainEvent .dots li')
+          .eq(this.realIndex)
+          .addClass('on')
+          .siblings()
+          .removeClass('on')
+      }
     },
     breakpoints: {
       768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 2,
+        spaceBetween: 36,
       }
 
     }
   });
+
+  $('.MainEvent .dots li').on('click', function () {
+    const idx = $(this).index();
+    $(this).addClass('on').siblings().removeClass('on')
+    EventSlide.slideTo(idx);
+  })
 
 
 
