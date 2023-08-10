@@ -83,7 +83,7 @@ $(function () {
 
   // 세번째 행사 섹션 슬라이드
   const EventSlide = new Swiper('.event_slide', {
-    loop: false,
+    loop: true,
     slidesPerView: 1,
     slidesPerGroupSkip: 1,
     spaceBetween: 0,

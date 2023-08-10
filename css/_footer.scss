@@ -1,112 +1,88 @@
 .Footer {
-    /* 
-
-푸터 시작 
-
-*/
-
-
-    background: #1a1a1a;
-    padding: 50rem 0 0 0;
+    background: #282828;
+    padding: 50rem 0 16rem 0;
     color: #fff;
 
 
-    .content h2 {
-        width: 200rem;
-        margin: 0 0 30rem 0;
-    }
+    .content {
+        .ft {
+            display: grid;
+            grid-template-columns: 240rem 1fr;
+            align-items: flex-start;
+            gap: 100rem;
+            margin: 0 0 16rem 0;
 
-    .content .ft {
-        display: grid;
-        grid-template-columns: 350rem 720rem;
-        margin: 0 auto 50rem auto;
-        align-items: center;
-        color: #999;
-        gap: 100rem;
-    }
+            border-bottom: 1px solid #666;
 
-    .content .ft .left {
-        border-right: 1px solid #666;
-    }
+            .left {
 
-    .content .ft .left .contact {
-        display: flex;
-        flex-direction: column;
-        gap: 10rem;
 
-        color: #ddd;
-        font-size: 14rem;
-        margin: 0 0 30rem 0;
-    }
+                h2 {
+                    text-align: center;
+                    margin: 0 0 30rem 0;
+                }
 
-    .content .ft .left span {
-        font-size: 13rem;
-        color: #999;
-    }
+                .contact {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8rem;
 
-    .content .ft .right {}
+                    color: #ddd;
+                    font-size: 14rem;
 
-    .content .ft .right .fm {
-        display: flex;
-        justify-content: space-between;
-    }
+                    margin: 0 0 16rem 0;
+                }
 
-    .content .ft .right .fm>li>a {
-        display: block;
-        font-size: 16rem;
-        font-weight: 500;
-        color: #ddd;
-        margin: 0 0 30rem 0;
-    }
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8rem;
 
-    .content .ft .right .fm>li>ul>li {
-        font-size: 14rem;
-    }
+                    i {
+                        font-size: 24rem;
+                        color: $color-white;
+                    }
+                }
+            }
 
-    .content .ft .right .fm>li>ul>li:not(:last-child) {
-        margin: 0 0 10rem 0;
-    }
+            .right {
+                margin: 0 0 16rem 0;
 
-    .content .fb {
-        border-top: 1px solid #666;
-        padding: 10rem 0;
-        color: #ddd;
-    }
+                .fm {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 60rem;
+                    gap: 36rem;
 
-    .content .fb .fb_box {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+                    >li {
 
-    .content .fb .fb_box li {
-        display: inline;
-    }
+                        >a {
+                            display: block;
+                            font-size: 18rem;
+                            font-weight: 500;
+                            color: #ddd;
+                            margin: 0 0 16rem 0;
+                        }
 
-    .content .fb .fb_box li:not(:last-child) {
-        margin-right: 10rem;
-    }
+                        >ul {
+                            >li {
+                                font-size: 16rem;
+                                color: #999;
 
-    .content .fb .icon {
-        font-size: 28rem;
-    }
+                                &:not(:last-child) {
+                                    margin: 0 0 10rem 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-    .content .fb .customer {
-        font-size: 14rem;
-    }
-
-    .content .fb .customer li {
-        position: relative;
-    }
-
-    .content .fb .customer li~li::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: -8rem;
-        transform: translate(0, -50%);
-        width: 2rem;
-        height: 2rem;
-        background: #999;
+        .copyright {
+            max-width: 1200rem;
+            margin: 0 auto;
+            font-size: 12rem;
+        }
     }
 }

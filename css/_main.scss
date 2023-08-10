@@ -343,6 +343,49 @@
                 }
             }
         }
+
+
+    }
+
+    .banner_wrap {
+        overflow: hidden;
+        height: 380rem;
+        background: url(../images/bLinkWrapBg1.png) center top no-repeat;
+        background-size: cover;
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+
+            .txt_box {
+                color: $color-white;
+
+                p {
+                    font-size: 32rem;
+                    font-weight: 600;
+                    margin: 0 0 16rem 0;
+                }
+
+                span {
+                    display: block;
+                    font-size: 32rem;
+                    margin: 0 0 16rem 0;
+                }
+
+                strong {
+                    font-size: 48rem;
+                    font-weight: 500;
+                }
+            }
+
+            img {
+                float: left;
+                width: 50%;
+                height: 207rem;
+            }
+        }
     }
 
     // 메인 연구 성과 섹션
@@ -354,7 +397,7 @@
             grid-gap: 36rem;
             grid-template-areas:
                 "s_n s_n s_n"
-                "f_n01 f_n02 f_n03";
+                "f_n01 f_n02 fr_nl";
             // grid-area: s_news;
             max-width: 1200rem;
             padding: 15rem;
@@ -374,7 +417,7 @@
                     background: $color-white;
 
                     display: grid;
-                    grid-template-columns: 2fr 400rem;
+                    grid-template-columns: 2fr 450rem;
 
 
                     .img_box {
@@ -399,28 +442,27 @@
                         position: absolute;
                         right: 0;
                         top: 0;
-                        width: 400rem;
+                        width: 450rem;
                         height: 100%;
-                        padding: 20rem;
+                        padding: 36rem;
                         border-left: 1rem solid $color-line;
 
                         strong {
                             display: block;
                             font-size: 24rem;
-                            font-weight: 600;
+                            font-weight: 700;
                             line-height: 30rem;
-                            margin: 0 0 22rem 0;
+                            margin: 0 0 30rem 0;
                         }
 
                         p {
                             font-size: 16rem;
                             line-height: 20rem;
-                            margin: 0 0 8rem 0;
                         }
 
                         span {
                             position: absolute;
-                            bottom: 20rem;
+                            bottom: 36rem;
                             font-size: 16rem;
                             font-weight: 600;
 
@@ -442,11 +484,6 @@
 
                 &.fnr02 {
                     grid-area: f_n02;
-                }
-
-
-                &.fnr03 {
-                    grid-area: f_n03;
                 }
 
                 .card {
@@ -501,10 +538,78 @@
                     }
                 }
             }
+
+            .fr_re_newslist {
+                position: relative;
+                grid-area: fr_nl;
+                width: 366rem;
+                height: 400rem;
+                background: $color-white;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                >ul {
+                    display: flex;
+                    flex-direction: column;
+
+                    >a {
+                        padding: 24rem 20rem;
+
+                        background: $color-main;
+                        color: $color-white;
+                        font-size: 20rem;
+                        font-weight: 600;
+
+                        span {
+                            float: right;
+                            vertical-align: text-top;
+                        }
+                    }
+
+                    li {
+                        padding: 20rem;
+
+                        .txt_box {
+                            strong {
+                                display: block;
+                                font-size: 16rem;
+                                font-weight: 600;
+                                margin: 0 0 8rem 0;
+                            }
+
+                            span {
+                                font-size: 12rem;
+
+                                &:last-child {
+                                    margin: 0 0 0 8rem;
+                                    font-weight: 700;
+                                    color: $color-main;
+                                }
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $color-line;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+
+
         }
     }
 
+
+
+
+    //  메인 주요 행사 이벤트 섹션
     #MainEvent {
+        background: #ececec;
+
         .content {
             display: grid;
             grid-gap: 36rem;
@@ -512,27 +617,27 @@
             max-width: 1200rem;
             padding: 15rem;
 
+
             .event_slide {
                 position: relative;
 
-                height: 400rem;
-                width: 800rem;
-                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                height: 638rem;
+                width: 768rem;
+
 
                 .itm {
                     border-top: 4rem solid $color-main;
-
                     background: $color-white;
-
-                    display: grid;
-                    grid-template-columns: 2fr 400rem;
-
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
 
                     .img_box {
-                        overflow: hidden;
                         height: 400rem;
+                        overflow: hidden;
+
+                        margin: 0 0 24rem 0;
 
                         img {
+
                             height: 100%;
                             width: 100%;
                             object-fit: cover;
@@ -547,17 +652,11 @@
                     }
 
                     .txt_box {
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        width: 400rem;
-                        height: 100%;
-                        padding: 20rem;
-                        border-left: 1rem solid $color-line;
+                        padding: 0 20rem;
 
                         strong {
                             display: block;
-                            font-size: 24rem;
+                            font-size: 20rem;
                             font-weight: 600;
                             line-height: 30rem;
                             margin: 0 0 22rem 0;
@@ -580,7 +679,65 @@
                 }
             }
 
-            .right_news {}
+            .fr_ev_newslist {
+                position: relative;
+                width: 366rem;
+                height: 638rem;
+                background: $color-white;
+                box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                >ul {
+                    display: flex;
+                    flex-direction: column;
+
+                    >a {
+                        padding: 24rem 20rem;
+
+                        background: $color-main;
+                        color: $color-white;
+                        font-size: 20rem;
+                        font-weight: 600;
+
+                        span {
+                            float: right;
+                            vertical-align: text-top;
+                        }
+                    }
+
+                    li {
+                        padding: 20rem;
+
+                        .txt_box {
+                            strong {
+                                display: block;
+                                font-size: 16rem;
+                                font-weight: 600;
+                                margin: 0 0 8rem 0;
+                            }
+
+                            span {
+                                font-size: 12rem;
+
+                                &:last-child {
+                                    margin: 0 0 0 8rem;
+                                    font-weight: 700;
+                                    color: $color-main;
+                                }
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $color-line;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+
         }
     }
 }

@@ -1,5 +1,7 @@
 .Header {
+
     // sticky를 쓰려면 부모 요소 over-flow 없어야 한다.
+
 
     position: relative;
     top: 0;
@@ -76,6 +78,9 @@
     }
 
 
+
+
+    // 메뉴
     .header_menu_area {
 
 
@@ -91,7 +96,7 @@
 
             display: flex;
             justify-content: flex-start;
-            gap: 72rem;
+            gap: 88rem;
 
 
             .h1 {
@@ -126,8 +131,6 @@
 
                     .mega_box {
                         display: none;
-
-
                         position: absolute;
                         left: 0;
                         top: 140rem;
