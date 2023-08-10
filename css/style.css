@@ -1056,8 +1056,24 @@ p {
 
 .Footer {
   background: #282828;
-  padding: 50rem 0 16rem 0;
   color: #fff;
+  padding: 0 0 50rem 0;
+}
+.Footer .ft_top_area {
+  height: 40rem;
+  background: #760023;
+  color: #ddd;
+  font-size: 16rem;
+  line-height: 40rem;
+  margin: 0 0 50rem 0;
+}
+.Footer .ft_top_area .content .util {
+  display: flex;
+  justify-content: space-between;
+  gap: 32rem;
+}
+.Footer .ft_top_area .content .util .privacy {
+  font-weight: 700;
 }
 .Footer .content .ft {
   display: grid;
@@ -1112,7 +1128,8 @@ p {
   margin: 0 0 10rem 0;
 }
 .Footer .content .copyright {
+  color: #999;
   max-width: 1200rem;
   margin: 0 auto;
-  font-size: 12rem;
+  font-size: 14rem;
 }/*# sourceMappingURL=style.css.map */
