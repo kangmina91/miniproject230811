@@ -35,13 +35,10 @@ $(function () {
     effect: 'fade',
     speed: 500,
     loop: true,
+    loopAdditionalSlides: 1,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.vnext',
-      prevEl: '.vprev',
     },
     pagination: {
       el: '.vpaging',
@@ -52,64 +49,41 @@ $(function () {
   /* 두번째 연구 성과 섹션 */
   const ResearchSlide = new Swiper('.research_slide', {
     loop: true,
+    loopAdditionalSlides: 1,
+    slidesPerView: 1,
+    slidesPerGroupSkip: 1,
     speed: 600,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
     },
-    on: {
-      slideChangeTransitionStart: function () {
-        $('.MainResearch .dots li')
-          .eq(this.realIndex)
-          .addClass('on')
-          .siblings()
-          .removeClass('on')
-      }
-    }
-  });
-  $('.MainResearch .arrows .left').on('click', function () {
-    ResearchSlide.slidePrev();
-  });
-  $('.MainResearch .arrows .right').on('click', function () {
-    ResearchSlide.slideNext();
+    pagination: {
+      el: '.vpaging',
+      clickable: true,
+    },
   });
 
 
-  $('.MainResearch .dots li').on('click', function () {
-    const idx = $(this).index();
-    $(this).addClass('on').siblings().removeClass('on')
-    ResearchSlide.slideTo(idx);
-  })
 
   // 세번째 행사 섹션 슬라이드
   const EventSlide = new Swiper('.event_slide', {
     loop: true,
+    loopAdditionalSlides: 1,
     slidesPerView: 1,
     slidesPerGroupSkip: 1,
     spaceBetween: 0,
-    on: {
-      slideChangeTransitionStart: function () {
-        $('.MainEvent .dots li')
-          .eq(this.realIndex)
-          .addClass('on')
-          .siblings()
-          .removeClass('on')
-      }
+    pagination: {
+      el: '.vpaging',
+      clickable: true,
     },
     breakpoints: {
       768: {
         slidesPerView: 2,
         spaceBetween: 36,
-      }
-
+      },
     }
   });
 
-  $('.MainEvent .dots li').on('click', function () {
-    const idx = $(this).index();
-    $(this).addClass('on').siblings().removeClass('on')
-    EventSlide.slideTo(idx);
-  })
 
 
 

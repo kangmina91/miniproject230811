@@ -4,10 +4,51 @@ $size-pc: 1200rem;
 $size-gap: 30rem;
 $shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
+
+
 @mixin inner() {
   max-width: $size-pc;
   margin: 0 auto;
   padding: 0 $size-gap / 2;
+}
+
+@mixin responsive($breakpoint ) {
+
+  /*
+      breakpoints are viewport arbitrary values,
+      they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+      the breakpoints I used were inspired by Bootstrap =>
+      https://getbootstrap.com/docs/5.0/layout/breakpoints/
+  */
+  @if $breakpoint ==sp {
+    @media only screen and (max-width: 575.98px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==sl {
+    @media only screen and (max-width: 767.98px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==t {
+    @media only screen and (max-width: 1199.97px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==lp {
+    @media only screen and (max-width: 1399.98px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==pc {
+    @media only screen and (min-width: 1399.99px) {
+      @content;
+    }
+  }
 }
 
 @mixin flex_center() {

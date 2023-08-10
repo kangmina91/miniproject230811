@@ -1,0 +1,1208 @@
+@import './mixins';
+
+.Header {
+
+
+    @include responsive(sl) {
+        position: relative;
+        top: 0;
+        z-index: 1001;
+
+
+        height: auto;
+
+        .header_top_area {
+            height: 40rem;
+            background: $color-body;
+            color: $color-line;
+            line-height: 40rem;
+            font-size: 14rem;
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+
+                .util {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20rem;
+
+                    >li {
+                        position: relative;
+
+                        ~li::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: -10rem;
+                            transform: translate(0, -50%);
+                            width: 1rem;
+                            height: 10rem;
+                            background: $color-gf;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        // header.on이 되었을 때 메뉴 영역 고정시키기
+        &.on {
+
+            .header_menu_area {
+
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                z-index: 1002;
+
+                height: 80rem;
+                line-height: 80rem;
+                box-shadow: 1px 1px 5px #ddd;
+
+                transition: all 0.5s ease;
+
+                .content {
+                    .gnb {
+                        .depth1 {
+
+                            // 메뉴 영역의 위치 변경으로 인한 top 수정.
+                            .mega_box {
+                                position: absolute;
+                                top: 80rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        // 메뉴
+        .header_menu_area {
+
+
+
+            height: 100rem;
+            font-size: 18rem;
+            font-weight: 600;
+            line-height: 100rem;
+
+            background: $color-white;
+
+            .content {
+
+                display: flex;
+                justify-content: flex-start;
+                gap: 88rem;
+
+
+                .h1 {
+                    flex: 0 0 178px;
+
+                }
+
+                .gnb {
+
+
+
+                    .depth1 {
+                        display: flex;
+
+                        >li {
+
+                            >a {
+                                display: block;
+                                word-break: keep-all;
+                                padding: 0 32rem;
+                            }
+
+                            &:hover {
+
+                                .mega_box {
+
+                                    display: block;
+
+                                }
+                            }
+                        }
+
+                        .mega_box {
+                            display: none;
+                            position: absolute;
+                            left: 0;
+                            top: 140rem;
+                            transform: translate(0, 0);
+                            background: url(../images/subGnb.png) no-repeat center center/cover;
+                            height: 400rem;
+                            width: 100%;
+                            border-top: 1px solid #ededee;
+                            border-bottom: 2rem solid $color-main;
+
+
+                            .content {
+                                display: flex;
+                                justify-content: flex-start;
+                                gap: 0;
+                                height: 100%;
+
+                                position: relative;
+
+                                .mega_title {
+                                    width: 299rem;
+                                    background: url(../images/subGnb_1depth.png) no-repeat center center/cover;
+                                    line-height: 1;
+                                    padding: 35rem 40rem;
+
+                                    h2 {
+                                        display: block;
+                                        font-size: 32rem;
+                                        font-weight: 400;
+                                        color: $color-main;
+                                        margin: 0 0 16rem 0;
+                                    }
+
+                                    p {
+                                        font-size: 14rem;
+                                    }
+                                }
+
+                                .depth2 {
+
+
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    flex-direction: column;
+                                    gap: 0;
+
+                                    padding: 35rem 40rem;
+                                    font-weight: 400;
+                                    line-height: 1;
+                                    height: 100%;
+                                    width: 300rem;
+
+                                    border-right: 1px solid #ededee;
+
+                                    position: relative;
+
+                                    >li {
+                                        &:hover {
+                                            background: $color-main;
+
+
+                                            >a {
+                                                background: url(../images/depth_2_arrow.png) no-repeat 65% center;
+                                                color: $color-white;
+                                            }
+
+                                            .depth3 {
+                                                display: block;
+                                            }
+                                        }
+
+                                        >a {
+                                            display: block;
+                                            width: 300rem;
+                                            height: 36rem;
+                                            line-height: 36rem;
+                                            padding: 0 10rem;
+                                        }
+
+                                        .depth3 {
+
+
+                                            display: none;
+
+                                            position: absolute;
+                                            left: 100%;
+                                            top: 0;
+
+                                            width: 100vh;
+                                            height: 400rem;
+
+
+                                            ul {
+                                                display: flex;
+                                                flex-direction: column;
+
+                                                padding: 35rem 40rem;
+                                                width: max-content;
+                                                height: 400rem;
+
+                                                li {
+
+                                                    width: 190rem;
+
+                                                    &:hover {
+                                                        a {
+                                                            color: $color-main;
+                                                        }
+                                                    }
+
+                                                    a {
+                                                        display: block;
+                                                        font-size: 16rem;
+                                                        height: 36rem;
+                                                        line-height: 36rem;
+
+                                                    }
+                                                }
+                                            }
+
+                                            .long_menu {
+                                                flex-wrap: wrap;
+                                                width: max-content;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+
+
+                    }
+                }
+            }
+        }
+
+        .header_bottom_area {
+            height: 32rem;
+            background: $color-main;
+            color: $color-line;
+            font-size: 16rem;
+            line-height: 32rem;
+
+            .content {
+                .util {
+                    display: flex;
+                    justify-content: center;
+                    gap: 32rem;
+                }
+            }
+        }
+
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 48;
+
+            vertical-align: middle;
+        }
+
+    }
+}
+
+.Main {
+    @include responsive(sl) {
+
+        // 메인 비주얼
+        #MainVisual {
+            position: relative;
+            height: calc(100vh - 172rem);
+
+            .quick_menu {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 48rem;
+                transition: all 0.2s ease;
+                z-index: 999;
+
+                &:hover {
+                    width: 168rem;
+
+                    >ul {
+                        width: 168rem;
+
+                        >li {
+                            >a {
+                                text-indent: 0;
+                            }
+                        }
+                    }
+                }
+
+                >ul {
+                    width: 48rem;
+                    font-size: 16rem;
+
+                    background-color: #70122b;
+                    transition: all 0.2s ease;
+                    letter-spacing: -1rem;
+                    margin: 80rem 0 0 0;
+
+                    >li {
+                        &.q01 {
+                            >a {
+                                background-position: 12rem 12rem;
+                            }
+                        }
+
+                        &.q02 {
+                            >a {
+                                background-position: 12rem -47rem;
+                            }
+                        }
+
+                        &.q03 {
+                            >a {
+                                background-position: 12rem -106rem;
+                            }
+                        }
+
+                        &.q04 {
+                            >a {
+                                background-position: 12rem -163rem;
+                            }
+                        }
+
+                        &.q05 {
+                            >a {
+                                background-position: 12rem -222rem;
+                            }
+                        }
+
+                        &.q06 {
+                            >a {
+                                background-position: 12rem -340rem;
+                            }
+                        }
+
+                        &.q07 {
+                            >a {
+                                background-position: 12rem -282rem;
+                            }
+                        }
+
+                        &.q08 {
+                            >a {
+                                background-position: 12rem -458rem;
+                            }
+                        }
+
+                        >a {
+                            display: block;
+                            color: #fff;
+                            height: 48rem;
+                            padding: 16rem 0 16rem 48rem;
+                            background: url('../images/quickLink_s.png') no-repeat;
+                            text-indent: -5000rem;
+
+                            &:hover {
+                                background-color: #b58d74;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_video {
+                .ctr {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(0, calc(-50% + 100px));
+                    margin: 560rem 0 0 -585rem;
+
+                    span {
+                        font-size: 56rem;
+                        color: $color-white;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+        // 메인 뉴스 섹션
+        #MainNews {
+            background: #f4f4f4;
+
+            .content {
+                display: grid;
+                grid-gap: 36rem;
+                grid-template-areas:
+                    "s_n"
+                    "r_n01"
+                    "r_n02"
+                    "f_n01"
+                    "f_n02";
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 1200rem;
+                padding: 15rem;
+
+                .news_slide {
+                    position: relative;
+
+                    grid-area: s_n;
+
+                    height: 600rem;
+                    width: 100%;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                    .ctr {
+                        .swiper-pagination-bullet {
+                            background-color: $color-main;
+                            width: 14rem;
+                            height: 14rem;
+                            margin: 0 8rem !important;
+                        }
+                    }
+
+
+                    .itm {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+
+                        .img_box {
+                            height: 400rem;
+                            overflow: hidden;
+
+                            margin: 0 0 24rem 0;
+
+                            img {
+
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+
+                                transition: 0.5s;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                        }
+
+
+                        .txt_box {
+                            padding: 0 20rem;
+
+                            strong {
+                                display: block;
+                                font-size: 32rem;
+                                font-weight: 600;
+                                line-height: 30rem;
+                                margin: 0 0 22rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                                margin: 0 0 8rem 0;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 20rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+
+                .r_news {
+                    width: 100%;
+                    height: 400rem;
+                    background: $color-white;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                    position: relative;
+
+                    &.rn01 {
+                        grid-area: r_n01;
+                    }
+
+                    &.rn02 {
+                        grid-area: r_n02;
+                    }
+
+                    .card {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+
+                        .img_box {
+                            height: 200rem;
+                            overflow: hidden;
+
+                            margin: 0 0 24rem 0;
+
+                            img {
+
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+
+                                transition: 0.5s;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                        }
+
+
+                        .txt_box {
+                            padding: 0 20rem;
+
+                            strong {
+                                display: block;
+                                font-size: 20rem;
+                                font-weight: 600;
+                                line-height: 24rem;
+                                margin: 0 0 18rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 20rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+
+                .f_news {
+                    width: 100%;
+                    height: 200rem;
+                    background: $color-white;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                    position: relative;
+
+                    &.fn01 {
+                        grid-area: f_n01;
+
+                        .card {
+                            border-top: 4rem solid $color-main;
+                            background: $color-white;
+
+                            padding: 20rem;
+
+                            .txt_box {
+                                strong {
+                                    display: block;
+                                    font-size: 20rem;
+                                    font-weight: 600;
+                                    line-height: 24rem;
+                                    margin: 0 0 18rem 0;
+                                }
+
+                                p {
+                                    font-size: 16rem;
+                                    line-height: 20rem;
+                                }
+
+                                span {
+                                    position: absolute;
+                                    bottom: 20rem;
+                                    font-size: 16rem;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+
+                    &.fn02 {
+                        grid-area: f_n02;
+                        position: relative;
+
+
+                        .card {
+                            border-top: 4rem solid $color-main;
+                            background: $color-white;
+
+                            padding: 20rem;
+
+                            strong {
+                                display: block;
+                                text-align: center;
+                                line-height: 156rem;
+                                font-size: 32rem;
+                                font-weight: 600;
+
+                                .material-symbols-outlined {
+                                    font-variation-settings:
+                                        'FILL' 100,
+                                        'wght' 600,
+                                        'GRAD' 100,
+                                        'opsz' 48;
+
+                                    vertical-align: text-top;
+
+                                    font-size: 40rem;
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .banner_wrap {
+            overflow: hidden;
+            height: 380rem;
+            background: url(../images/bLinkWrapBg1.png) center top no-repeat;
+            background-size: cover;
+
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+
+                .txt_box {
+                    color: $color-white;
+
+                    p {
+                        font-size: 32rem;
+                        font-weight: 600;
+                        margin: 0 0 16rem 0;
+                    }
+
+                    span {
+                        display: block;
+                        font-size: 32rem;
+                        margin: 0 0 16rem 0;
+                    }
+
+                    strong {
+                        font-size: 48rem;
+                        font-weight: 500;
+                    }
+                }
+
+                img {
+                    float: left;
+                    width: 50%;
+                    height: 207rem;
+                }
+            }
+        }
+
+        // 메인 연구 성과 섹션
+        #MainResearch {
+            background: #f4f4f4;
+
+            .content {
+                display: grid;
+                grid-gap: 36rem;
+                grid-template-areas:
+                    "s_n"
+                    "f_n01"
+                    "f_n02"
+                    "fr_nl";
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 1200rem;
+                padding: 15rem;
+
+                .research_slide {
+                    position: relative;
+
+                    grid-area: s_n;
+
+                    height: 700rem;
+                    width: 100%;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                    .ctr {
+                        position: absolute;
+                        right: 24rem;
+                        bottom: 24rem;
+                        width: 150rem;
+
+                        .swiper-pagination-bullet {
+                            background-color: $color-main;
+                            width: 14rem;
+                            height: 14rem;
+                            margin: 0 8rem !important;
+                        }
+                    }
+
+                    .itm {
+                        border-top: 4rem solid $color-main;
+
+                        background: $color-white;
+
+                        display: grid;
+                        // r
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+
+                        .img_box {
+                            overflow: hidden;
+                            height: 400rem;
+
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+
+                                transition: 0.5s;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                        }
+
+                        .txt_box {
+                            position: absolute;
+                            right: -170rem;
+                            top: 380rem;
+                            transform: translate(-50%, 0);
+                            width: 100%;
+                            height: 100%;
+                            padding: 36rem;
+                            // r
+                            border-left: none;
+
+                            strong {
+                                display: block;
+                                font-size: 24rem;
+                                font-weight: 700;
+                                line-height: 30rem;
+                                margin: 0 0 30rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 36rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+
+                .f_re_news {
+                    width: 366rem;
+                    height: 400rem;
+                    background: $color-white;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                    position: relative;
+
+                    &.fnr01 {
+                        grid-area: f_n01;
+                    }
+
+                    &.fnr02 {
+                        grid-area: f_n02;
+                    }
+
+                    .card {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+
+                        .img_box {
+                            height: 200rem;
+                            overflow: hidden;
+
+                            margin: 0 0 24rem 0;
+
+                            img {
+
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+
+                                transition: 0.5s;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                        }
+
+
+                        .txt_box {
+                            padding: 0 20rem;
+
+                            strong {
+                                display: block;
+                                font-size: 20rem;
+                                font-weight: 600;
+                                line-height: 24rem;
+                                margin: 0 0 18rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 20rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+
+                .fr_re_newslist {
+                    position: relative;
+                    grid-area: fr_nl;
+                    width: 366rem;
+                    height: 400rem;
+                    background: $color-white;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                    >ul {
+                        display: flex;
+                        flex-direction: column;
+
+                        >a {
+                            padding: 24rem 20rem;
+
+                            background: $color-main;
+                            color: $color-white;
+                            font-size: 20rem;
+                            font-weight: 600;
+
+                            span {
+                                float: right;
+                                vertical-align: text-top;
+                            }
+                        }
+
+                        li {
+                            padding: 20rem;
+
+                            .txt_box {
+                                strong {
+                                    display: block;
+                                    font-size: 16rem;
+                                    font-weight: 600;
+                                    margin: 0 0 8rem 0;
+                                }
+
+                                span {
+                                    font-size: 12rem;
+
+                                    &:last-child {
+                                        margin: 0 0 0 8rem;
+                                        font-weight: 700;
+                                        color: $color-main;
+                                    }
+                                }
+                            }
+
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $color-line;
+                            }
+                        }
+
+
+                    }
+
+
+
+                }
+
+
+            }
+        }
+
+
+
+
+        //  메인 주요 행사 이벤트 섹션
+        #MainEvent {
+            background: #ececec;
+
+            .content {
+                display: grid;
+                grid-gap: 36rem;
+                // r
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 1200rem;
+                padding: 15rem;
+
+
+                .event_slide {
+                    position: relative;
+                    height: 638rem;
+                    // r
+                    width: 100%;
+
+                    .ctr {
+                        position: absolute;
+                        right: 16rem;
+                        bottom: 10rem;
+                        width: 100rem;
+
+
+                        .swiper-pagination-bullet {
+                            background-color: $color-main;
+                            width: 12rem;
+                            height: 12rem;
+
+                            margin: 0 8rem 0 0 !important;
+                        }
+                    }
+
+                    .itm {
+                        border-top: 4rem solid $color-main;
+                        background: $color-white;
+                        box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                        .img_box {
+                            height: 400rem;
+                            overflow: hidden;
+
+                            margin: 0 0 24rem 0;
+
+                            img {
+
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+
+                                transition: 0.5s;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                        }
+
+                        .txt_box {
+                            padding: 0 20rem;
+
+                            strong {
+                                display: block;
+                                font-size: 20rem;
+                                font-weight: 600;
+                                line-height: 30rem;
+                                margin: 0 0 22rem 0;
+                            }
+
+                            p {
+                                font-size: 16rem;
+                                line-height: 20rem;
+                                margin: 0 0 8rem 0;
+                            }
+
+                            span {
+                                position: absolute;
+                                bottom: 20rem;
+                                font-size: 16rem;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+
+                .fr_ev_newslist {
+                    position: relative;
+                    width: 366rem;
+                    height: 638rem;
+                    background: $color-white;
+                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                    >ul {
+                        display: flex;
+                        flex-direction: column;
+
+                        >a {
+                            padding: 24rem 20rem;
+
+                            background: $color-main;
+                            color: $color-white;
+                            font-size: 20rem;
+                            font-weight: 600;
+
+                            span {
+                                float: right;
+                                vertical-align: text-top;
+                            }
+                        }
+
+                        li {
+                            padding: 20rem;
+
+                            .txt_box {
+                                strong {
+                                    display: block;
+                                    font-size: 16rem;
+                                    font-weight: 600;
+                                    margin: 0 0 8rem 0;
+                                }
+
+                                span {
+                                    font-size: 12rem;
+
+                                    &:last-child {
+                                        margin: 0 0 0 8rem;
+                                        font-weight: 700;
+                                        color: $color-main;
+                                    }
+                                }
+                            }
+
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $color-line;
+                            }
+                        }
+
+
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+.Footer {
+    @include responsive(sl) {
+        background: #282828;
+        color: #fff;
+        padding: 0 0 50rem 0;
+
+        .ft_top_area {
+            height: 40rem;
+            background: $color-main;
+            color: $color-line;
+            font-size: 16rem;
+            line-height: 40rem;
+            margin: 0 0 50rem 0;
+
+            .content {
+                .util {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 32rem;
+
+                    .privacy {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .content {
+            .ft {
+                display: grid;
+                // r
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                align-items: flex-start;
+                gap: 100rem;
+                margin: 0 0 16rem 0;
+
+                border-bottom: 1px solid #666;
+
+                .left {
+
+
+                    h2 {
+                        text-align: center;
+                        margin: 0 0 30rem 0;
+                    }
+
+                    .contact {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8rem;
+
+                        color: #ddd;
+                        font-size: 14rem;
+
+                        margin: 0 0 16rem 0;
+                    }
+
+                    .icon {
+                        display: flex;
+                        justify-content: center;
+                        gap: 8rem;
+
+                        i {
+                            font-size: 24rem;
+                            color: $color-white;
+                        }
+                    }
+                }
+
+                .right {
+                    margin: 0 0 16rem 0;
+
+                    .fm {
+                        display: grid;
+                        // r
+                        grid-template-columns: repeat(auto-fit, minmax(120rem, 1fr));
+                        // r
+                        gap: 24rem;
+
+                        >li {
+
+                            >a {
+                                display: block;
+                                font-size: 18rem;
+                                font-weight: 500;
+                                color: #ddd;
+                                margin: 0 0 16rem 0;
+                            }
+
+                            >ul {
+                                >li {
+                                    font-size: 16rem;
+                                    color: #999;
+
+                                    &:not(:last-child) {
+                                        margin: 0 0 10rem 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                color: #999;
+                max-width: 1200rem;
+                margin: 0 auto;
+                font-size: 14rem;
+            }
+        }
+    }
+}

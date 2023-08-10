@@ -618,6 +618,12 @@ p {
   width: 834rem;
   box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
 }
+.Main #MainNews .content .news_slide .ctr .swiper-pagination-bullet {
+  background-color: #760023;
+  width: 14rem;
+  height: 14rem;
+  margin: 0 8rem !important;
+}
 .Main #MainNews .content .news_slide .itm {
   border-top: 4rem solid #760023;
   background: #fff;
@@ -814,6 +820,18 @@ p {
   width: 1170rem;
   box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
 }
+.Main #MainResearch .content .research_slide .ctr {
+  position: absolute;
+  right: 24rem;
+  bottom: 24rem;
+  width: 150rem;
+}
+.Main #MainResearch .content .research_slide .ctr .swiper-pagination-bullet {
+  background-color: #760023;
+  width: 14rem;
+  height: 14rem;
+  margin: 0 8rem !important;
+}
 .Main #MainResearch .content .research_slide .itm {
   border-top: 4rem solid #760023;
   background: #fff;
@@ -969,6 +987,18 @@ p {
   position: relative;
   height: 638rem;
   width: 768rem;
+}
+.Main #MainEvent .content .event_slide .ctr {
+  position: absolute;
+  right: 16rem;
+  bottom: 10rem;
+  width: 100rem;
+}
+.Main #MainEvent .content .event_slide .ctr .swiper-pagination-bullet {
+  background-color: #760023;
+  width: 12rem;
+  height: 12rem;
+  margin: 0 8rem 0 0 !important;
 }
 .Main #MainEvent .content .event_slide .itm {
   border-top: 4rem solid #760023;
@@ -1132,4 +1162,968 @@ p {
   max-width: 1200rem;
   margin: 0 auto;
   font-size: 14rem;
+}
+
+@keyframes TxtDownAni {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtDownAni02 {
+  0% {
+    opacity: 0;
+    transform: translate(0, -25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtUpAni {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtrightAni {
+  0% {
+    opacity: 0;
+    transform: translate(-100rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes TxtleftAni {
+  0% {
+    opacity: 0;
+    transform: translate(100rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(0, 9rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 18rem);
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%);
+    outline: 0 solid rgb(255, 255, 255);
+  }
+  80% {
+    outline: 0 solid rgb(255, 255, 255);
+  }
+  100% {
+    transform: translate(-50%, 90rem);
+    outline: 20rem solid rgba(255, 255, 255, 0);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(150%);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.Header {
+  /*
+      breakpoints are viewport arbitrary values,
+      they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+      the breakpoints I used were inspired by Bootstrap =>
+      https://getbootstrap.com/docs/5.0/layout/breakpoints/
+  */
+}
+@media only screen and (max-width: 767.98px) {
+  .Header {
+    position: relative;
+    top: 0;
+    z-index: 1001;
+    height: auto;
+  }
+  .Header .header_top_area {
+    height: 40rem;
+    background: #333;
+    color: #ddd;
+    line-height: 40rem;
+    font-size: 14rem;
+  }
+  .Header .header_top_area .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Header .header_top_area .content .util {
+    display: flex;
+    justify-content: space-between;
+    gap: 20rem;
+  }
+  .Header .header_top_area .content .util > li {
+    position: relative;
+  }
+  .Header .header_top_area .content .util > li ~ li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10rem;
+    transform: translate(0, -50%);
+    width: 1rem;
+    height: 10rem;
+    background: #7b7b7b;
+  }
+  .Header.on .header_menu_area {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1002;
+    height: 80rem;
+    line-height: 80rem;
+    box-shadow: 1px 1px 5px #ddd;
+    transition: all 0.5s ease;
+  }
+  .Header.on .header_menu_area .content .gnb .depth1 .mega_box {
+    position: absolute;
+    top: 80rem;
+  }
+  .Header .header_menu_area {
+    height: 100rem;
+    font-size: 18rem;
+    font-weight: 600;
+    line-height: 100rem;
+    background: #fff;
+  }
+  .Header .header_menu_area .content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 88rem;
+  }
+  .Header .header_menu_area .content .h1 {
+    flex: 0 0 178px;
+  }
+  .Header .header_menu_area .content .gnb .depth1 {
+    display: flex;
+  }
+  .Header .header_menu_area .content .gnb .depth1 > li > a {
+    display: block;
+    word-break: keep-all;
+    padding: 0 32rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 > li:hover .mega_box {
+    display: block;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 140rem;
+    transform: translate(0, 0);
+    background: url(../images/subGnb.png) no-repeat center center/cover;
+    height: 400rem;
+    width: 100%;
+    border-top: 1px solid #ededee;
+    border-bottom: 2rem solid #760023;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0;
+    height: 100%;
+    position: relative;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title {
+    width: 299rem;
+    background: url(../images/subGnb_1depth.png) no-repeat center center/cover;
+    line-height: 1;
+    padding: 35rem 40rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title h2 {
+    display: block;
+    font-size: 32rem;
+    font-weight: 400;
+    color: #760023;
+    margin: 0 0 16rem 0;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title p {
+    font-size: 14rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding: 35rem 40rem;
+    font-weight: 400;
+    line-height: 1;
+    height: 100%;
+    width: 300rem;
+    border-right: 1px solid #ededee;
+    position: relative;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover {
+    background: #760023;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover > a {
+    background: url(../images/depth_2_arrow.png) no-repeat 65% center;
+    color: #fff;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover .depth3 {
+    display: block;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li > a {
+    display: block;
+    width: 300rem;
+    height: 36rem;
+    line-height: 36rem;
+    padding: 0 10rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100vh;
+    height: 400rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul {
+    display: flex;
+    flex-direction: column;
+    padding: 35rem 40rem;
+    width: -moz-max-content;
+    width: max-content;
+    height: 400rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul li {
+    width: 190rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul li:hover a {
+    color: #760023;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul li a {
+    display: block;
+    font-size: 16rem;
+    height: 36rem;
+    line-height: 36rem;
+  }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 .long_menu {
+    flex-wrap: wrap;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .Header .header_bottom_area {
+    height: 32rem;
+    background: #760023;
+    color: #ddd;
+    font-size: 16rem;
+    line-height: 32rem;
+  }
+  .Header .header_bottom_area .content .util {
+    display: flex;
+    justify-content: center;
+    gap: 32rem;
+  }
+  .Header .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
+    vertical-align: middle;
+  }
+}
+
+.Main {
+  /*
+      breakpoints are viewport arbitrary values,
+      they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+      the breakpoints I used were inspired by Bootstrap =>
+      https://getbootstrap.com/docs/5.0/layout/breakpoints/
+  */
+}
+@media only screen and (max-width: 767.98px) {
+  .Main #MainVisual {
+    position: relative;
+    height: calc(100vh - 172rem);
+  }
+  .Main #MainVisual .quick_menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48rem;
+    transition: all 0.2s ease;
+    z-index: 999;
+  }
+  .Main #MainVisual .quick_menu:hover {
+    width: 168rem;
+  }
+  .Main #MainVisual .quick_menu:hover > ul {
+    width: 168rem;
+  }
+  .Main #MainVisual .quick_menu:hover > ul > li > a {
+    text-indent: 0;
+  }
+  .Main #MainVisual .quick_menu > ul {
+    width: 48rem;
+    font-size: 16rem;
+    background-color: #70122b;
+    transition: all 0.2s ease;
+    letter-spacing: -1rem;
+    margin: 80rem 0 0 0;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q01 > a {
+    background-position: 12rem 12rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q02 > a {
+    background-position: 12rem -47rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q03 > a {
+    background-position: 12rem -106rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q04 > a {
+    background-position: 12rem -163rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q05 > a {
+    background-position: 12rem -222rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q06 > a {
+    background-position: 12rem -340rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q07 > a {
+    background-position: 12rem -282rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li.q08 > a {
+    background-position: 12rem -458rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li > a {
+    display: block;
+    color: #fff;
+    height: 48rem;
+    padding: 16rem 0 16rem 48rem;
+    background: url("../images/quickLink_s.png") no-repeat;
+    text-indent: -5000rem;
+  }
+  .Main #MainVisual .quick_menu > ul > li > a:hover {
+    background-color: #b58d74;
+  }
+  .Main #MainVisual .main_video .ctr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, calc(-50% + 100px));
+    margin: 560rem 0 0 -585rem;
+  }
+  .Main #MainVisual .main_video .ctr span {
+    font-size: 56rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  .Main #MainNews {
+    background: #f4f4f4;
+  }
+  .Main #MainNews .content {
+    display: grid;
+    grid-gap: 36rem;
+    grid-template-areas: "s_n" "r_n01" "r_n02" "f_n01" "f_n02";
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200rem;
+    padding: 15rem;
+  }
+  .Main #MainNews .content .news_slide {
+    position: relative;
+    grid-area: s_n;
+    height: 600rem;
+    width: 100%;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+  }
+  .Main #MainNews .content .news_slide .ctr .swiper-pagination-bullet {
+    background-color: #760023;
+    width: 14rem;
+    height: 14rem;
+    margin: 0 8rem !important;
+  }
+  .Main #MainNews .content .news_slide .itm {
+    border-top: 4rem solid #760023;
+    background: #fff;
+  }
+  .Main #MainNews .content .news_slide .itm .img_box {
+    height: 400rem;
+    overflow: hidden;
+    margin: 0 0 24rem 0;
+  }
+  .Main #MainNews .content .news_slide .itm .img_box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+  }
+  .Main #MainNews .content .news_slide .itm .img_box img:hover {
+    transform: scale(1.1);
+  }
+  .Main #MainNews .content .news_slide .itm .txt_box {
+    padding: 0 20rem;
+  }
+  .Main #MainNews .content .news_slide .itm .txt_box strong {
+    display: block;
+    font-size: 32rem;
+    font-weight: 600;
+    line-height: 30rem;
+    margin: 0 0 22rem 0;
+  }
+  .Main #MainNews .content .news_slide .itm .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+    margin: 0 0 8rem 0;
+  }
+  .Main #MainNews .content .news_slide .itm .txt_box span {
+    position: absolute;
+    bottom: 20rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainNews .content .r_news {
+    width: 100%;
+    height: 400rem;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+    position: relative;
+  }
+  .Main #MainNews .content .r_news.rn01 {
+    grid-area: r_n01;
+  }
+  .Main #MainNews .content .r_news.rn02 {
+    grid-area: r_n02;
+  }
+  .Main #MainNews .content .r_news .card {
+    border-top: 4rem solid #760023;
+    background: #fff;
+  }
+  .Main #MainNews .content .r_news .card .img_box {
+    height: 200rem;
+    overflow: hidden;
+    margin: 0 0 24rem 0;
+  }
+  .Main #MainNews .content .r_news .card .img_box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+  }
+  .Main #MainNews .content .r_news .card .img_box img:hover {
+    transform: scale(1.1);
+  }
+  .Main #MainNews .content .r_news .card .txt_box {
+    padding: 0 20rem;
+  }
+  .Main #MainNews .content .r_news .card .txt_box strong {
+    display: block;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 24rem;
+    margin: 0 0 18rem 0;
+  }
+  .Main #MainNews .content .r_news .card .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+  }
+  .Main #MainNews .content .r_news .card .txt_box span {
+    position: absolute;
+    bottom: 20rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainNews .content .f_news {
+    width: 100%;
+    height: 200rem;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+    position: relative;
+  }
+  .Main #MainNews .content .f_news.fn01 {
+    grid-area: f_n01;
+  }
+  .Main #MainNews .content .f_news.fn01 .card {
+    border-top: 4rem solid #760023;
+    background: #fff;
+    padding: 20rem;
+  }
+  .Main #MainNews .content .f_news.fn01 .card .txt_box strong {
+    display: block;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 24rem;
+    margin: 0 0 18rem 0;
+  }
+  .Main #MainNews .content .f_news.fn01 .card .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+  }
+  .Main #MainNews .content .f_news.fn01 .card .txt_box span {
+    position: absolute;
+    bottom: 20rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainNews .content .f_news.fn02 {
+    grid-area: f_n02;
+    position: relative;
+  }
+  .Main #MainNews .content .f_news.fn02 .card {
+    border-top: 4rem solid #760023;
+    background: #fff;
+    padding: 20rem;
+  }
+  .Main #MainNews .content .f_news.fn02 .card strong {
+    display: block;
+    text-align: center;
+    line-height: 156rem;
+    font-size: 32rem;
+    font-weight: 600;
+  }
+  .Main #MainNews .content .f_news.fn02 .card strong .material-symbols-outlined {
+    font-variation-settings: "FILL" 100, "wght" 600, "GRAD" 100, "opsz" 48;
+    vertical-align: text-top;
+    font-size: 40rem;
+  }
+  .Main .banner_wrap {
+    overflow: hidden;
+    height: 380rem;
+    background: url(../images/bLinkWrapBg1.png) center top no-repeat;
+    background-size: cover;
+  }
+  .Main .banner_wrap .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .Main .banner_wrap .content .txt_box {
+    color: #fff;
+  }
+  .Main .banner_wrap .content .txt_box p {
+    font-size: 32rem;
+    font-weight: 600;
+    margin: 0 0 16rem 0;
+  }
+  .Main .banner_wrap .content .txt_box span {
+    display: block;
+    font-size: 32rem;
+    margin: 0 0 16rem 0;
+  }
+  .Main .banner_wrap .content .txt_box strong {
+    font-size: 48rem;
+    font-weight: 500;
+  }
+  .Main .banner_wrap .content img {
+    float: left;
+    width: 50%;
+    height: 207rem;
+  }
+  .Main #MainResearch {
+    background: #f4f4f4;
+  }
+  .Main #MainResearch .content {
+    display: grid;
+    grid-gap: 36rem;
+    grid-template-areas: "s_n" "f_n01" "f_n02" "fr_nl";
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200rem;
+    padding: 15rem;
+  }
+  .Main #MainResearch .content .research_slide {
+    position: relative;
+    grid-area: s_n;
+    height: 700rem;
+    width: 100%;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+  }
+  .Main #MainResearch .content .research_slide .ctr {
+    position: absolute;
+    right: 24rem;
+    bottom: 24rem;
+    width: 150rem;
+  }
+  .Main #MainResearch .content .research_slide .ctr .swiper-pagination-bullet {
+    background-color: #760023;
+    width: 14rem;
+    height: 14rem;
+    margin: 0 8rem !important;
+  }
+  .Main #MainResearch .content .research_slide .itm {
+    border-top: 4rem solid #760023;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .Main #MainResearch .content .research_slide .itm .img_box {
+    overflow: hidden;
+    height: 400rem;
+  }
+  .Main #MainResearch .content .research_slide .itm .img_box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+  }
+  .Main #MainResearch .content .research_slide .itm .img_box img:hover {
+    transform: scale(1.1);
+  }
+  .Main #MainResearch .content .research_slide .itm .txt_box {
+    position: absolute;
+    right: -170rem;
+    top: 380rem;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 100%;
+    padding: 36rem;
+    border-left: none;
+  }
+  .Main #MainResearch .content .research_slide .itm .txt_box strong {
+    display: block;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 30rem;
+    margin: 0 0 30rem 0;
+  }
+  .Main #MainResearch .content .research_slide .itm .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+  }
+  .Main #MainResearch .content .research_slide .itm .txt_box span {
+    position: absolute;
+    bottom: 36rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainResearch .content .f_re_news {
+    width: 366rem;
+    height: 400rem;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+    position: relative;
+  }
+  .Main #MainResearch .content .f_re_news.fnr01 {
+    grid-area: f_n01;
+  }
+  .Main #MainResearch .content .f_re_news.fnr02 {
+    grid-area: f_n02;
+  }
+  .Main #MainResearch .content .f_re_news .card {
+    border-top: 4rem solid #760023;
+    background: #fff;
+  }
+  .Main #MainResearch .content .f_re_news .card .img_box {
+    height: 200rem;
+    overflow: hidden;
+    margin: 0 0 24rem 0;
+  }
+  .Main #MainResearch .content .f_re_news .card .img_box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+  }
+  .Main #MainResearch .content .f_re_news .card .img_box img:hover {
+    transform: scale(1.1);
+  }
+  .Main #MainResearch .content .f_re_news .card .txt_box {
+    padding: 0 20rem;
+  }
+  .Main #MainResearch .content .f_re_news .card .txt_box strong {
+    display: block;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 24rem;
+    margin: 0 0 18rem 0;
+  }
+  .Main #MainResearch .content .f_re_news .card .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+  }
+  .Main #MainResearch .content .f_re_news .card .txt_box span {
+    position: absolute;
+    bottom: 20rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainResearch .content .fr_re_newslist {
+    position: relative;
+    grid-area: fr_nl;
+    width: 366rem;
+    height: 400rem;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul > a {
+    padding: 24rem 20rem;
+    background: #760023;
+    color: #fff;
+    font-size: 20rem;
+    font-weight: 600;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul > a span {
+    float: right;
+    vertical-align: text-top;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul li {
+    padding: 20rem;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul li .txt_box strong {
+    display: block;
+    font-size: 16rem;
+    font-weight: 600;
+    margin: 0 0 8rem 0;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul li .txt_box span {
+    font-size: 12rem;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul li .txt_box span:last-child {
+    margin: 0 0 0 8rem;
+    font-weight: 700;
+    color: #760023;
+  }
+  .Main #MainResearch .content .fr_re_newslist > ul li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+  .Main #MainEvent {
+    background: #ececec;
+  }
+  .Main #MainEvent .content {
+    display: grid;
+    grid-gap: 36rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200rem;
+    padding: 15rem;
+  }
+  .Main #MainEvent .content .event_slide {
+    position: relative;
+    height: 638rem;
+    width: 100%;
+  }
+  .Main #MainEvent .content .event_slide .ctr {
+    position: absolute;
+    right: 16rem;
+    bottom: 10rem;
+    width: 100rem;
+  }
+  .Main #MainEvent .content .event_slide .ctr .swiper-pagination-bullet {
+    background-color: #760023;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 8rem 0 0 !important;
+  }
+  .Main #MainEvent .content .event_slide .itm {
+    border-top: 4rem solid #760023;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+  }
+  .Main #MainEvent .content .event_slide .itm .img_box {
+    height: 400rem;
+    overflow: hidden;
+    margin: 0 0 24rem 0;
+  }
+  .Main #MainEvent .content .event_slide .itm .img_box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+  }
+  .Main #MainEvent .content .event_slide .itm .img_box img:hover {
+    transform: scale(1.1);
+  }
+  .Main #MainEvent .content .event_slide .itm .txt_box {
+    padding: 0 20rem;
+  }
+  .Main #MainEvent .content .event_slide .itm .txt_box strong {
+    display: block;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 30rem;
+    margin: 0 0 22rem 0;
+  }
+  .Main #MainEvent .content .event_slide .itm .txt_box p {
+    font-size: 16rem;
+    line-height: 20rem;
+    margin: 0 0 8rem 0;
+  }
+  .Main #MainEvent .content .event_slide .itm .txt_box span {
+    position: absolute;
+    bottom: 20rem;
+    font-size: 16rem;
+    font-weight: 600;
+  }
+  .Main #MainEvent .content .fr_ev_newslist {
+    position: relative;
+    width: 366rem;
+    height: 638rem;
+    background: #fff;
+    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul > a {
+    padding: 24rem 20rem;
+    background: #760023;
+    color: #fff;
+    font-size: 20rem;
+    font-weight: 600;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul > a span {
+    float: right;
+    vertical-align: text-top;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul li {
+    padding: 20rem;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul li .txt_box strong {
+    display: block;
+    font-size: 16rem;
+    font-weight: 600;
+    margin: 0 0 8rem 0;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul li .txt_box span {
+    font-size: 12rem;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul li .txt_box span:last-child {
+    margin: 0 0 0 8rem;
+    font-weight: 700;
+    color: #760023;
+  }
+  .Main #MainEvent .content .fr_ev_newslist > ul li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.Footer {
+  /*
+      breakpoints are viewport arbitrary values,
+      they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+      the breakpoints I used were inspired by Bootstrap =>
+      https://getbootstrap.com/docs/5.0/layout/breakpoints/
+  */
+}
+@media only screen and (max-width: 767.98px) {
+  .Footer {
+    background: #282828;
+    color: #fff;
+    padding: 0 0 50rem 0;
+  }
+  .Footer .ft_top_area {
+    height: 40rem;
+    background: #760023;
+    color: #ddd;
+    font-size: 16rem;
+    line-height: 40rem;
+    margin: 0 0 50rem 0;
+  }
+  .Footer .ft_top_area .content .util {
+    display: flex;
+    justify-content: space-between;
+    gap: 32rem;
+  }
+  .Footer .ft_top_area .content .util .privacy {
+    font-weight: 700;
+  }
+  .Footer .content .ft {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: flex-start;
+    gap: 100rem;
+    margin: 0 0 16rem 0;
+    border-bottom: 1px solid #666;
+  }
+  .Footer .content .ft .left h2 {
+    text-align: center;
+    margin: 0 0 30rem 0;
+  }
+  .Footer .content .ft .left .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+    color: #ddd;
+    font-size: 14rem;
+    margin: 0 0 16rem 0;
+  }
+  .Footer .content .ft .left .icon {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+  }
+  .Footer .content .ft .left .icon i {
+    font-size: 24rem;
+    color: #fff;
+  }
+  .Footer .content .ft .right {
+    margin: 0 0 16rem 0;
+  }
+  .Footer .content .ft .right .fm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120rem, 1fr));
+    gap: 24rem;
+  }
+  .Footer .content .ft .right .fm > li > a {
+    display: block;
+    font-size: 18rem;
+    font-weight: 500;
+    color: #ddd;
+    margin: 0 0 16rem 0;
+  }
+  .Footer .content .ft .right .fm > li > ul > li {
+    font-size: 16rem;
+    color: #999;
+  }
+  .Footer .content .ft .right .fm > li > ul > li:not(:last-child) {
+    margin: 0 0 10rem 0;
+  }
+  .Footer .content .copyright {
+    color: #999;
+    max-width: 1200rem;
+    margin: 0 auto;
+    font-size: 14rem;
+  }
 }/*# sourceMappingURL=style.css.map */
