@@ -1283,24 +1283,22 @@ g .section {
   .Header .header_top_area {
     display: none;
   }
-  .Header.on .header_menu_area {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1002;
-    height: 80rem;
-    line-height: 80rem;
-    box-shadow: 1px 1px 5px #ddd;
-    transition: all 0.5s ease;
-  }
   .Header.on .header_menu_area .content .gnb .depth1 .mega_box {
-    position: absolute;
-    top: 80rem;
+    display: none;
+    position: static;
+    transform: translate(0, 0);
+    background: none;
+    height: 100%;
+    width: 100%;
+    border-top: none;
+    border-bottom: none;
+    z-index: 1010;
   }
   .Header .header_menu_area {
-    display: none;
+    position: fixed;
+    z-index: 1002;
     height: 100rem;
+    width: 100%;
     font-size: 18rem;
     font-weight: 600;
     line-height: 100rem;
@@ -1314,70 +1312,84 @@ g .section {
   .Header .header_menu_area .content .h1 {
     flex: 0 0 178px;
   }
+  .Header .header_menu_area .content .gnb {
+    margin: 0 0 0 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    background: #b58d74;
+    padding: 0 15rem;
+    width: calc(100% - 90rem);
+    transition: 0.5s;
+    z-index: 999;
+  }
+  .Header .header_menu_area .content .gnb.on {
+    left: 0;
+  }
   .Header .header_menu_area .content .gnb .depth1 {
     display: flex;
+    gap: 0;
+    flex-direction: column;
+    color: #efefef;
+    margin: 160rem 0 0;
+  }
+  .Header .header_menu_area .content .gnb .depth1 > li {
+    position: relative;
   }
   .Header .header_menu_area .content .gnb .depth1 > li > a {
-    display: block;
-    word-break: keep-all;
-    padding: 0 32rem;
+    padding: 10rem;
+    line-height: 40rem;
+    font-size: 30rem;
   }
   .Header .header_menu_area .content .gnb .depth1 > li:hover .mega_box {
-    display: block;
+    display: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box {
     display: none;
-    position: absolute;
-    left: 0;
-    top: 140rem;
+    position: static;
     transform: translate(0, 0);
-    background: url(../images/subGnb.png) no-repeat center center/cover;
-    height: 400rem;
+    background: none;
+    height: 100%;
     width: 100%;
-    border-top: 1px solid #ededee;
-    border-bottom: 2rem solid #760023;
+    border-top: none;
+    border-bottom: none;
+    z-index: 1010;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content {
     display: flex;
     justify-content: flex-start;
     gap: 0;
     height: 100%;
+    padding: 0;
     position: relative;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title {
-    width: 299rem;
-    background: url(../images/subGnb_1depth.png) no-repeat center center/cover;
-    line-height: 1;
-    padding: 35rem 40rem;
-  }
-  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title h2 {
-    display: block;
-    font-size: 32rem;
-    font-weight: 400;
-    color: #760023;
-    margin: 0 0 16rem 0;
-  }
-  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .mega_title p {
-    font-size: 14rem;
+    display: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     gap: 0;
-    padding: 35rem 40rem;
+    padding: 0;
     font-weight: 400;
     line-height: 1;
     height: 100%;
-    width: 300rem;
-    border-right: 1px solid #ededee;
+    width: 100%;
+    border-right: none;
     position: relative;
   }
+  .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li {
+    background: #ddd;
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover {
-    background: #760023;
+    background: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover > a {
-    background: url(../images/depth_2_arrow.png) no-repeat 65% center;
+    background: none;
     color: #fff;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover .depth3 {
@@ -1385,26 +1397,23 @@ g .section {
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li > a {
     display: block;
-    width: 300rem;
-    height: 36rem;
-    line-height: 36rem;
-    padding: 0 10rem;
+    width: 100%;
+    padding: 0;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 {
     display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    width: 100vh;
-    height: 400rem;
+    position: static;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul {
     display: flex;
     flex-direction: column;
-    padding: 35rem 40rem;
+    padding: 0;
     width: -moz-max-content;
     width: max-content;
-    height: 400rem;
+    height: 100%;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li .depth3 ul li {
     width: 190rem;
@@ -1425,6 +1434,53 @@ g .section {
   }
   .Header .header_bottom_area {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .Header .mobile_btn {
+    display: block;
+    position: fixed;
+    inset: 35rem 30rem auto auto;
+    z-index: 1004;
+    width: 30rem;
+    height: 30rem;
+    background: #ddd;
+    border-radius: 5rem;
+  }
+  .Header .mobile_btn::before, .Header .mobile_btn::after {
+    content: "";
+    position: absolute;
+    inset: 14rem 5rem auto 5rem;
+    height: 2rem;
+    background: #000;
+  }
+  .Header .mobile_btn.on::before {
+    transform: rotate(45deg);
+    transition: 0.5s 0.2s;
+  }
+  .Header .mobile_btn.on::after {
+    transform: rotate(-45deg);
+    transition: 0.5s 0.6s;
+  }
+  .Header .mobile_btn.on button::before, .Header .mobile_btn.on button::after {
+    display: none;
+  }
+  .Header .mobile_btn button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .Header .mobile_btn button::before, .Header .mobile_btn button::after {
+    content: "";
+    position: absolute;
+    height: 2rem;
+    background: #000;
+  }
+  .Header .mobile_btn button::before {
+    inset: 7rem 5rem auto 5rem;
+  }
+  .Header .mobile_btn button::after {
+    inset: auto 5rem 7rem 5rem;
   }
 }
 
@@ -1683,38 +1739,27 @@ g .section {
     font-size: 40rem;
   }
   .Main .banner_wrap {
-    overflow: hidden;
-    height: 380rem;
-    background: url(../images/bLinkWrapBg1.png) center top no-repeat;
-    background-size: cover;
+    height: 300rem;
+    padding: 20rem;
   }
   .Main .banner_wrap .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-  .Main .banner_wrap .content .txt_box {
-    color: #fff;
+    display: grid;
+    text-align: center;
   }
   .Main .banner_wrap .content .txt_box p {
-    font-size: 32rem;
-    font-weight: 600;
-    margin: 0 0 16rem 0;
+    font-size: 20rem;
+    margin: 0 0 8rem 0;
   }
   .Main .banner_wrap .content .txt_box span {
-    display: block;
-    font-size: 32rem;
-    margin: 0 0 16rem 0;
+    font-size: 20rem;
   }
   .Main .banner_wrap .content .txt_box strong {
-    font-size: 48rem;
-    font-weight: 500;
+    display: block;
+    font-size: 36rem;
+    margin: 0 0 16rem 0;
   }
   .Main .banner_wrap .content img {
-    float: left;
-    width: 50%;
-    height: 207rem;
+    height: 100%;
   }
   .Main #MainResearch {
     background: #f4f4f4;
@@ -2013,11 +2058,11 @@ g .section {
     height: 104rem;
     font-size: 16rem;
     line-height: 20rem;
-    padding: 16rem;
+    padding: 16rem 0;
   }
   .Footer .ft_top_area .content .util {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(86rem, 1fr));
     gap: 8rem;
   }
   .Footer .content .ft {

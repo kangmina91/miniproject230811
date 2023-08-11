@@ -11,8 +11,6 @@ $(function () {
   });
 
 
-
-
   // 메인 비디오
   $('#bgndVideo').YTPlayer({
     videoURL: 'MQJ2Edjos8g',
@@ -88,14 +86,23 @@ $(function () {
 
 
   // 모바일 메뉴 작동
-  $('.gnb>ul>li>a').on('click', function (e) {
-    if ($('.header .gnb').hasClass('on')) {
+  $('.gnb>.depth1>li>a').on('click', function (e) {
+    if ($('.Header .gnb').hasClass('on')) {
       e.preventDefault();
       $(this).next().stop().slideToggle();
-      $(this).parent().siblings().find('.sub_menu').slideUp();
+      $(this).parent().siblings().find('.Header .gnb .depth2').slideUp();
+
+      $('.depth2>li>a').on('click', function (e) {
+        e.preventDefault();
+        $(this).next().stop().slideToggle();
+        $(this).parent().siblings().find('.Header .gnb .depth3').stop().slideUp();
+      });
+
     }
 
   });
+
+
 
   // 모바일 버튼  작동
   $('.mobile_btn').on('click', function () {
@@ -105,7 +112,7 @@ $(function () {
 
   $(window).on('resize', function () {
     $('.gnb').removeClass('on');
-    $('.sub_menu').removeAttr('style');
+    $('.Header .gnb .depth2').removeAttr('style');
 
   });
 
