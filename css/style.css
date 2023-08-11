@@ -309,7 +309,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.section {
+g .section {
   padding: 100rem 0;
 }
 
@@ -1281,33 +1281,7 @@ p {
     height: auto;
   }
   .Header .header_top_area {
-    height: 40rem;
-    background: #333;
-    color: #ddd;
-    line-height: 40rem;
-    font-size: 14rem;
-  }
-  .Header .header_top_area .content {
-    display: flex;
-    justify-content: space-between;
-  }
-  .Header .header_top_area .content .util {
-    display: flex;
-    justify-content: space-between;
-    gap: 20rem;
-  }
-  .Header .header_top_area .content .util > li {
-    position: relative;
-  }
-  .Header .header_top_area .content .util > li ~ li::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -10rem;
-    transform: translate(0, -50%);
-    width: 1rem;
-    height: 10rem;
-    background: #7b7b7b;
+    display: none;
   }
   .Header.on .header_menu_area {
     position: fixed;
@@ -1325,6 +1299,7 @@ p {
     top: 80rem;
   }
   .Header .header_menu_area {
+    display: none;
     height: 100rem;
     font-size: 18rem;
     font-weight: 600;
@@ -1449,20 +1424,7 @@ p {
     width: max-content;
   }
   .Header .header_bottom_area {
-    height: 32rem;
-    background: #760023;
-    color: #ddd;
-    font-size: 16rem;
-    line-height: 32rem;
-  }
-  .Header .header_bottom_area .content .util {
-    display: flex;
-    justify-content: center;
-    gap: 32rem;
-  }
-  .Header .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
-    vertical-align: middle;
+    display: none;
   }
 }
 
@@ -1477,7 +1439,7 @@ p {
 @media only screen and (max-width: 767.98px) {
   .Main #MainVisual {
     position: relative;
-    height: calc(100vh - 172rem);
+    height: 500rem;
   }
   .Main #MainVisual .quick_menu {
     position: absolute;
@@ -2047,83 +2009,38 @@ p {
   */
 }
 @media only screen and (max-width: 767.98px) {
-  .Footer {
-    background: #282828;
-    color: #fff;
-    padding: 0 0 50rem 0;
-  }
   .Footer .ft_top_area {
-    height: 40rem;
-    background: #760023;
-    color: #ddd;
+    height: 104rem;
     font-size: 16rem;
-    line-height: 40rem;
-    margin: 0 0 50rem 0;
+    line-height: 20rem;
+    padding: 16rem;
   }
   .Footer .ft_top_area .content .util {
-    display: flex;
-    justify-content: space-between;
-    gap: 32rem;
-  }
-  .Footer .ft_top_area .content .util .privacy {
-    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8rem;
   }
   .Footer .content .ft {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: flex-start;
-    gap: 100rem;
-    margin: 0 0 16rem 0;
-    border-bottom: 1px solid #666;
-  }
-  .Footer .content .ft .left h2 {
-    text-align: center;
-    margin: 0 0 30rem 0;
-  }
-  .Footer .content .ft .left .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8rem;
-    color: #ddd;
-    font-size: 14rem;
-    margin: 0 0 16rem 0;
-  }
-  .Footer .content .ft .left .icon {
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-  }
-  .Footer .content .ft .left .icon i {
-    font-size: 24rem;
-    color: #fff;
-  }
-  .Footer .content .ft .right {
-    margin: 0 0 16rem 0;
+    gap: 40rem;
   }
   .Footer .content .ft .right .fm {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120rem, 1fr));
     gap: 24rem;
+    text-align: center;
   }
   .Footer .content .ft .right .fm > li > a {
-    display: block;
-    font-size: 18rem;
-    font-weight: 500;
-    color: #ddd;
+    font-size: 16rem;
     margin: 0 0 16rem 0;
   }
   .Footer .content .ft .right .fm > li > ul > li {
-    font-size: 16rem;
-    color: #999;
+    font-size: 14rem;
   }
   .Footer .content .ft .right .fm > li > ul > li:not(:last-child) {
-    margin: 0 0 10rem 0;
+    margin: 0 0 8rem 0;
   }
   .Footer .content .copyright {
-    color: #999;
-    max-width: 1200rem;
-    margin: 0 auto;
-    font-size: 14rem;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -12,37 +12,7 @@
         height: auto;
 
         .header_top_area {
-            height: 40rem;
-            background: $color-body;
-            color: $color-line;
-            line-height: 40rem;
-            font-size: 14rem;
-
-            .content {
-                display: flex;
-                justify-content: space-between;
-
-                .util {
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 20rem;
-
-                    >li {
-                        position: relative;
-
-                        ~li::before {
-                            content: "";
-                            position: absolute;
-                            top: 50%;
-                            left: -10rem;
-                            transform: translate(0, -50%);
-                            width: 1rem;
-                            height: 10rem;
-                            background: $color-gf;
-                        }
-                    }
-                }
-            }
+            display: none;
         }
 
 
@@ -83,7 +53,7 @@
 
         // 메뉴
         .header_menu_area {
-
+            display: none;
 
 
             height: 100rem;
@@ -271,31 +241,10 @@
         }
 
         .header_bottom_area {
-            height: 32rem;
-            background: $color-main;
-            color: $color-line;
-            font-size: 16rem;
-            line-height: 32rem;
-
-            .content {
-                .util {
-                    display: flex;
-                    justify-content: center;
-                    gap: 32rem;
-                }
-            }
+            display: none;
         }
 
 
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 300,
-                'GRAD' 0,
-                'opsz' 48;
-
-            vertical-align: middle;
-        }
 
     }
 }
@@ -306,7 +255,8 @@
         // 메인 비주얼
         #MainVisual {
             position: relative;
-            height: calc(100vh - 172rem);
+            // r
+            height: 500rem;
 
             .quick_menu {
                 position: absolute;
@@ -1091,104 +1041,49 @@
 
 
 
-
+// r
 .Footer {
     @include responsive(sl) {
-        background: #282828;
-        color: #fff;
-        padding: 0 0 50rem 0;
-
         .ft_top_area {
-            height: 40rem;
-            background: $color-main;
-            color: $color-line;
+
+            height: 104rem;
             font-size: 16rem;
-            line-height: 40rem;
-            margin: 0 0 50rem 0;
+            line-height: 20rem;
+            padding: 16rem;
 
             .content {
                 .util {
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 32rem;
-
-                    .privacy {
-                        font-weight: 700;
-                    }
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+                    gap: 8rem;
                 }
             }
         }
 
         .content {
             .ft {
-                display: grid;
-                // r
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                align-items: flex-start;
-                gap: 100rem;
-                margin: 0 0 16rem 0;
-
-                border-bottom: 1px solid #666;
-
-                .left {
-
-
-                    h2 {
-                        text-align: center;
-                        margin: 0 0 30rem 0;
-                    }
-
-                    .contact {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 8rem;
-
-                        color: #ddd;
-                        font-size: 14rem;
-
-                        margin: 0 0 16rem 0;
-                    }
-
-                    .icon {
-                        display: flex;
-                        justify-content: center;
-                        gap: 8rem;
-
-                        i {
-                            font-size: 24rem;
-                            color: $color-white;
-                        }
-                    }
-                }
+                gap: 40rem;
 
                 .right {
-                    margin: 0 0 16rem 0;
-
                     .fm {
                         display: grid;
-                        // r
                         grid-template-columns: repeat(auto-fit, minmax(120rem, 1fr));
-                        // r
                         gap: 24rem;
+                        text-align: center;
 
                         >li {
-
                             >a {
-                                display: block;
-                                font-size: 18rem;
-                                font-weight: 500;
-                                color: #ddd;
+                                font-size: 16rem;
                                 margin: 0 0 16rem 0;
                             }
 
                             >ul {
                                 >li {
-                                    font-size: 16rem;
-                                    color: #999;
+                                    font-size: 14rem;
 
                                     &:not(:last-child) {
-                                        margin: 0 0 10rem 0;
+                                        margin: 0 0 8rem 0;
                                     }
                                 }
                             }
@@ -1198,10 +1093,7 @@
             }
 
             .copyright {
-                color: #999;
-                max-width: 1200rem;
-                margin: 0 auto;
-                font-size: 14rem;
+                text-align: center;
             }
         }
     }
