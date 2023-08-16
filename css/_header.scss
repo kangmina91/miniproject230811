@@ -169,6 +169,7 @@
                                 }
                             }
 
+                            // 중메뉴 ul
                             .depth2 {
 
 
@@ -211,8 +212,6 @@
                                     }
 
                                     .depth3 {
-
-
                                         display: none;
 
                                         position: absolute;
@@ -222,7 +221,7 @@
                                         width: 100vh;
                                         height: 400rem;
 
-
+                                        // 소메뉴 ul
                                         ul {
                                             display: flex;
                                             flex-direction: column;

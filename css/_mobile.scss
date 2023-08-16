@@ -87,8 +87,12 @@
                     transition: 0.5s;
                     z-index: 999;
 
+                    // 하위 메뉴 생성 시 자동 스크롤 생성
+                    overflow: auto;
+
                     &.on {
                         left: 0;
+
                     }
 
                     // 첫번째 대메뉴
@@ -120,8 +124,8 @@
 
 
                             >a {
-                                padding: 20rem;
-                                font-size: 24rem;
+                                padding: 20rem 0;
+                                font-size: 20rem;
                                 line-height: 1;
                                 background-color: $color-line3;
                                 border-bottom: 1px solid $color-line;
@@ -158,39 +162,24 @@
                                     display: none;
                                 }
 
-                                // ul
+                                // 중메뉴 ul
                                 .depth2 {
-
-                                    display: grid;
-                                    grid-template-columns: 1fr;
-
-                                    gap: 0;
-
                                     padding: 0;
-                                    font-weight: 400;
-                                    line-height: 1;
-                                    height: 100%;
                                     width: 100%;
 
-                                    background: $color-white;
-
-                                    position: relative;
-
                                     >li {
-                                        color: $color-dark;
-                                        text-align: center;
-                                        font-size: 20rem;
 
                                         border-bottom: 1px solid $color-line;
 
 
                                         &:hover {
-                                            background: none;
+                                            background: $color-white;
 
+                                            // 대학현황 총장실
                                             >a {
                                                 background: none;
                                                 color: $color-dark;
-                                                border-bottom: 1px solid $color-line;
+
                                             }
 
                                             .depth3 {
@@ -198,12 +187,13 @@
                                             }
                                         }
 
-                                        // 연구성과 연구포탈 
+                                        // 대학현황 총장실
                                         >a {
                                             display: block;
+                                            padding: 5rem 0;
                                             width: 100%;
-                                            padding: 0;
-
+                                            height: 100%;
+                                            border-bottom: 1px solid $color-line;
                                         }
 
                                         .depth3 {
@@ -216,10 +206,10 @@
                                             height: 100%;
 
 
-
+                                            // 소메뉴 ul
                                             ul {
-                                                display: flex;
-                                                flex-direction: column;
+                                                display: grid;
+                                                grid-template-columns: 1fr 1fr;
 
                                                 padding: 0;
                                                 width: 100%;
@@ -227,7 +217,7 @@
 
                                                 li {
                                                     width: 100%;
-                                                    height: auto;
+                                                    height: 100%;
 
                                                     &:hover {
 
@@ -239,20 +229,14 @@
 
                                                     }
 
-                                                    a {
-
-                                                        display: block;
-                                                        font-size: 16rem;
-                                                        height: 36rem;
-                                                        line-height: 36rem;
-
-                                                    }
+                                                    a {}
                                                 }
                                             }
 
+
                                             .long_menu {
                                                 flex-wrap: wrap;
-                                                width: max-content;
+                                                width: 100%;
                                             }
                                         }
                                     }
@@ -668,7 +652,7 @@
 
                     grid-area: s_n;
 
-                    height: 700rem;
+                    height: 600rem;
                     width: 100%;
                     box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
 
@@ -697,8 +681,9 @@
 
 
                         .img_box {
-                            overflow: hidden;
-                            height: 400rem;
+                            // r
+                            height: 300rem;
+                            border-bottom: 1px solid $color-line;
 
                             img {
                                 height: 100%;
@@ -715,14 +700,15 @@
                         }
 
                         .txt_box {
+                            // r
                             position: absolute;
-                            right: -170rem;
-                            top: 380rem;
-                            transform: translate(-50%, 0);
+                            right: 0;
+                            top: 0;
+                            transform: translate(0, 0);
                             width: 100%;
                             height: 100%;
-                            padding: 36rem;
-                            // r
+                            padding: 0 20rem;
+                            margin: 320rem 0 0 0;
                             border-left: none;
 
                             strong {
@@ -750,7 +736,7 @@
                 }
 
                 .f_re_news {
-                    width: 366rem;
+                    width: 100%;
                     height: 400rem;
                     background: $color-white;
                     box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
@@ -820,7 +806,7 @@
                 .fr_re_newslist {
                     position: relative;
                     grid-area: fr_nl;
-                    width: 366rem;
+                    width: 100%;
                     height: 400rem;
                     background: $color-white;
                     box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
@@ -894,13 +880,10 @@
                 // r
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 max-width: 1200rem;
-                padding: 15rem;
-
 
                 .event_slide {
-                    position: relative;
-                    height: 638rem;
                     // r
+                    height: 550rem;
                     width: 100%;
 
                     .ctr {
@@ -924,8 +907,10 @@
                         background: $color-white;
                         box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
 
+
                         .img_box {
-                            height: 400rem;
+                            // r
+                            height: 300rem;
                             overflow: hidden;
 
                             margin: 0 0 24rem 0;
@@ -974,11 +959,9 @@
                 }
 
                 .fr_ev_newslist {
-                    position: relative;
-                    width: 366rem;
-                    height: 638rem;
-                    background: $color-white;
-                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+
+                    width: 100%;
+                    height: 100%;
 
                     >ul {
                         display: flex;
@@ -1052,6 +1035,7 @@
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(86rem, 1fr));
                     gap: 8rem;
+                    text-align: center;
                 }
             }
         }
