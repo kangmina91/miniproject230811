@@ -342,108 +342,21 @@
 }
 
 .Main {
+
     @include responsive(sl) {
+        .section {
+            padding: 50rem 0;
+        }
 
         // 메인 비주얼
         #MainVisual {
             position: relative;
             // r
-            height: 500rem;
+            height: 350rem;
+            width: 100%;
 
             .quick_menu {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 48rem;
-                transition: all 0.2s ease;
-                z-index: 999;
-
-                &:hover {
-                    width: 168rem;
-
-                    >ul {
-                        width: 168rem;
-
-                        >li {
-                            >a {
-                                text-indent: 0;
-                            }
-                        }
-                    }
-                }
-
-                >ul {
-                    width: 48rem;
-                    font-size: 16rem;
-
-                    background-color: #70122b;
-                    transition: all 0.2s ease;
-                    letter-spacing: -1rem;
-                    margin: 80rem 0 0 0;
-
-                    >li {
-                        &.q01 {
-                            >a {
-                                background-position: 12rem 12rem;
-                            }
-                        }
-
-                        &.q02 {
-                            >a {
-                                background-position: 12rem -47rem;
-                            }
-                        }
-
-                        &.q03 {
-                            >a {
-                                background-position: 12rem -106rem;
-                            }
-                        }
-
-                        &.q04 {
-                            >a {
-                                background-position: 12rem -163rem;
-                            }
-                        }
-
-                        &.q05 {
-                            >a {
-                                background-position: 12rem -222rem;
-                            }
-                        }
-
-                        &.q06 {
-                            >a {
-                                background-position: 12rem -340rem;
-                            }
-                        }
-
-                        &.q07 {
-                            >a {
-                                background-position: 12rem -282rem;
-                            }
-                        }
-
-                        &.q08 {
-                            >a {
-                                background-position: 12rem -458rem;
-                            }
-                        }
-
-                        >a {
-                            display: block;
-                            color: #fff;
-                            height: 48rem;
-                            padding: 16rem 0 16rem 48rem;
-                            background: url('../images/quickLink_s.png') no-repeat;
-                            text-indent: -5000rem;
-
-                            &:hover {
-                                background-color: #b58d74;
-                            }
-                        }
-                    }
-                }
+                display: none;
             }
 
             .main_video {

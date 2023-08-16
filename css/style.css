@@ -1530,69 +1530,16 @@ p {
   */
 }
 @media only screen and (max-width: 767.98px) {
+  .Main .section {
+    padding: 50rem 0;
+  }
   .Main #MainVisual {
     position: relative;
-    height: 500rem;
+    height: 350rem;
+    width: 100%;
   }
   .Main #MainVisual .quick_menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 48rem;
-    transition: all 0.2s ease;
-    z-index: 999;
-  }
-  .Main #MainVisual .quick_menu:hover {
-    width: 168rem;
-  }
-  .Main #MainVisual .quick_menu:hover > ul {
-    width: 168rem;
-  }
-  .Main #MainVisual .quick_menu:hover > ul > li > a {
-    text-indent: 0;
-  }
-  .Main #MainVisual .quick_menu > ul {
-    width: 48rem;
-    font-size: 16rem;
-    background-color: #70122b;
-    transition: all 0.2s ease;
-    letter-spacing: -1rem;
-    margin: 80rem 0 0 0;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q01 > a {
-    background-position: 12rem 12rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q02 > a {
-    background-position: 12rem -47rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q03 > a {
-    background-position: 12rem -106rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q04 > a {
-    background-position: 12rem -163rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q05 > a {
-    background-position: 12rem -222rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q06 > a {
-    background-position: 12rem -340rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q07 > a {
-    background-position: 12rem -282rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li.q08 > a {
-    background-position: 12rem -458rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li > a {
-    display: block;
-    color: #fff;
-    height: 48rem;
-    padding: 16rem 0 16rem 48rem;
-    background: url("../images/quickLink_s.png") no-repeat;
-    text-indent: -5000rem;
-  }
-  .Main #MainVisual .quick_menu > ul > li > a:hover {
-    background-color: #b58d74;
+    display: none;
   }
   .Main #MainVisual .main_video .ctr {
     position: absolute;
