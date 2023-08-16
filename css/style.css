@@ -309,7 +309,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-g .section {
+.section {
   padding: 100rem 0;
 }
 
@@ -332,6 +332,23 @@ g .section {
   font-size: 24rem;
   font-weight: 600;
   letter-spacing: -1rem;
+}
+
+.to_top {
+  position: fixed;
+  bottom: 30rem;
+  right: 30rem;
+  z-index: 999;
+}
+.to_top i {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10rem;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20rem;
+  cursor: pointer;
 }
 
 .Header {
@@ -1278,31 +1295,41 @@ g .section {
     position: relative;
     top: 0;
     z-index: 1001;
-    height: auto;
+    height: 80rem;
+    line-height: 80rem;
   }
   .Header .header_top_area {
     display: none;
+  }
+  .Header.on .header_menu_area {
+    transition: none;
   }
   .Header.on .header_menu_area .content .gnb .depth1 .mega_box {
     display: none;
     position: static;
     transform: translate(0, 0);
     background: none;
-    height: 100%;
     width: 100%;
     border-top: none;
     border-bottom: none;
     z-index: 1010;
+    line-height: 1;
+    height: -moz-max-content;
+    height: max-content;
+    transition: none;
   }
   .Header .header_menu_area {
     position: fixed;
     z-index: 1002;
-    height: 100rem;
+    height: 80rem;
     width: 100%;
     font-size: 18rem;
     font-weight: 600;
-    line-height: 100rem;
+    height: 80rem;
+    line-height: 80rem;
     background: #fff;
+    border-bottom: 1px solid #ddd;
+    transition: none;
   }
   .Header .header_menu_area .content {
     display: flex;
@@ -1315,12 +1342,12 @@ g .section {
   .Header .header_menu_area .content .gnb {
     margin: 0 0 0 0;
     position: fixed;
-    top: 0;
+    top: 80rem;
     bottom: 0;
     left: -100%;
-    background: #b58d74;
-    padding: 0 15rem;
-    width: calc(100% - 90rem);
+    background: #ffffff;
+    width: 100%;
+    height: calc(100% - 80rem);
     transition: 0.5s;
     z-index: 999;
   }
@@ -1328,19 +1355,28 @@ g .section {
     left: 0;
   }
   .Header .header_menu_area .content .gnb .depth1 {
-    display: flex;
-    gap: 0;
-    flex-direction: column;
-    color: #efefef;
-    margin: 160rem 0 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 50%;
+    margin: -181rem 0 0 0;
+    color: #444444;
+    text-align: center;
   }
   .Header .header_menu_area .content .gnb .depth1 > li {
     position: relative;
+    line-height: 1;
   }
   .Header .header_menu_area .content .gnb .depth1 > li > a {
-    padding: 10rem;
-    line-height: 40rem;
-    font-size: 30rem;
+    padding: 20rem;
+    font-size: 24rem;
+    line-height: 1;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #ddd;
   }
   .Header .header_menu_area .content .gnb .depth1 > li:hover .mega_box {
     display: none;
@@ -1350,11 +1386,11 @@ g .section {
     position: static;
     transform: translate(0, 0);
     background: none;
-    height: 100%;
     width: 100%;
     border-top: none;
     border-bottom: none;
     z-index: 1010;
+    height: auto;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content {
     display: flex;
@@ -1368,8 +1404,9 @@ g .section {
     display: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 {
-    display: flex;
-    justify-content: flex-start;
+    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-direction: column;
     gap: 0;
     padding: 0;
@@ -1377,23 +1414,22 @@ g .section {
     line-height: 1;
     height: 100%;
     width: 100%;
-    border-right: none;
+    background: #7b7b7b;
     position: relative;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li {
-    background: #ddd;
-    color: #000;
-    border-bottom: 1px solid #000;
+    color: #ddd;
+    text-align: center;
+    font-size: 20rem;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover {
     background: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover > a {
     background: none;
-    color: #fff;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li:hover .depth3 {
-    display: block;
+    display: none;
   }
   .Header .header_menu_area .content .gnb .depth1 .mega_box .content .depth2 > li > a {
     display: block;

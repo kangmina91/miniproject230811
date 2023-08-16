@@ -3,23 +3,24 @@
 .Header {
 
 
+
     @include responsive(sl) {
         position: relative;
         top: 0;
         z-index: 1001;
+        height: 80rem;
+        line-height: 80rem;
 
-
-        height: auto;
 
         .header_top_area {
             display: none;
         }
 
-
         // header.on이 되었을 때 메뉴 영역 고정시키기
         &.on {
-
             .header_menu_area {
+                transition: none;
+
                 .content {
                     .gnb {
                         .depth1 {
@@ -29,11 +30,13 @@
                                 transform: translate(0, 0);
 
                                 background: none;
-                                height: 100%;
                                 width: 100%;
                                 border-top: none;
                                 border-bottom: none;
                                 z-index: 1010;
+                                line-height: 1;
+                                height: max-content;
+                                transition: none;
                             }
                         }
                     }
@@ -43,17 +46,21 @@
 
 
 
-        // 메뉴
+        // 메뉴 영역
         .header_menu_area {
             position: fixed;
             z-index: 1002;
-            height: 100rem;
+            height: 80rem;
             width: 100%;
             font-size: 18rem;
             font-weight: 600;
-            line-height: 100rem;
+
+            height: 80rem;
+            line-height: 80rem;
 
             background: $color-white;
+            border-bottom: 1px solid $color-line;
+            transition: none;
 
             .content {
 
@@ -64,17 +71,19 @@
 
                 .h1 {
                     flex: 0 0 178px;
+
                 }
 
+                // 대메뉴 배경 영역
                 .gnb {
                     margin: 0 0 0 0;
                     position: fixed;
-                    top: 0;
+                    top: 80rem;
                     bottom: 0;
                     left: -100%;
-                    background: #b58d74;
-                    padding: 0 15rem;
-                    width: calc(100% - 90rem);
+                    background: #ffffff;
+                    width: 100%;
+                    height: calc(100% - 80rem);
                     transition: 0.5s;
                     z-index: 999;
 
@@ -82,21 +91,39 @@
                         left: 0;
                     }
 
+                    // 첫번째 대메뉴
                     .depth1 {
 
-                        display: flex;
-                        gap: 0;
-                        flex-direction: column;
-                        color: $color-gray;
-                        margin: 160rem 0 0;
+                        display: grid;
+                        grid-template-columns: 1fr;
+
+
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+
+                        width: 100%;
+                        height: 50%;
+
+                        margin: -181rem 0 0 0;
+                        color: $color-dark;
+                        text-align: center;
+
 
                         >li {
+
                             position: relative;
 
+
+                            line-height: 1;
+
                             >a {
-                                padding: 10rem;
-                                line-height: 40rem;
-                                font-size: 30rem;
+                                padding: 20rem;
+                                font-size: 24rem;
+                                line-height: 1;
+                                background-color: $color-line3;
+                                border-bottom: 1px solid $color-line;
                             }
 
                             &:hover {
@@ -112,11 +139,11 @@
                             transform: translate(0, 0);
 
                             background: none;
-                            height: 100%;
                             width: 100%;
                             border-top: none;
                             border-bottom: none;
                             z-index: 1010;
+                            height: auto;
 
                             .content {
                                 display: flex;
@@ -132,10 +159,9 @@
 
                                 // ul
                                 .depth2 {
-
-
-                                    display: flex;
-                                    justify-content: flex-start;
+                                    display: none;
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
                                     flex-direction: column;
                                     gap: 0;
 
@@ -145,14 +171,15 @@
                                     height: 100%;
                                     width: 100%;
 
-                                    border-right: none;
+
+                                    background: $color-gf;
 
                                     position: relative;
 
                                     >li {
-                                        background: #ddd;
-                                        color: #000;
-                                        border-bottom: 1px solid #000;
+                                        color: $color-line;
+                                        text-align: center;
+                                        font-size: 20rem;
 
                                         &:hover {
                                             background: none;
@@ -160,11 +187,10 @@
 
                                             >a {
                                                 background: none;
-                                                color: $color-white;
                                             }
 
                                             .depth3 {
-                                                display: block;
+                                                display: none;
                                             }
                                         }
 

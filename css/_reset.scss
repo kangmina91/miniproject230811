@@ -229,7 +229,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-g .section {
+.section {
   padding: 100rem 0;
 }
 
@@ -251,5 +251,23 @@ g .section {
     font-size: 24rem;
     font-weight: 600;
     letter-spacing: -1rem;
+  }
+}
+
+.to_top {
+  position: fixed;
+  bottom: 30rem;
+  right: 30rem;
+  z-index: 999;
+
+  i {
+    color: $color-white;
+    background: $color-rgba05;
+    padding: 10rem;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20rem;
+    cursor: pointer;
   }
 }
