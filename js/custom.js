@@ -18,6 +18,7 @@ $(function () {
     autoPlay: true,
     showControls: false,
     playOnlyIfVisible: true,
+    fitToBackground: true,
   });
 
   // 메인 비디오 컨트롤

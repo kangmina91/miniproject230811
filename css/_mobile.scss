@@ -76,14 +76,12 @@
 
                 // 대메뉴 배경 영역
                 .gnb {
-                    margin: 0 0 0 0;
                     position: fixed;
                     top: 80rem;
-                    bottom: 0;
                     left: -100%;
                     background: #ffffff;
                     width: 100%;
-                    height: calc(100% - 80rem);
+                    height: 100%;
                     transition: 0.5s;
                     z-index: 999;
 
@@ -95,33 +93,22 @@
 
                     }
 
+
                     // 첫번째 대메뉴
                     .depth1 {
 
                         display: grid;
                         grid-template-columns: 1fr;
 
-
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-
                         width: 100%;
-                        height: 50%;
-
-                        margin: -181rem 0 0 0;
                         color: $color-dark;
                         text-align: center;
 
 
                         >li {
-
                             position: relative;
 
-
                             line-height: 1;
-
 
                             >a {
                                 padding: 20rem 0;
@@ -336,23 +323,27 @@
         #MainVisual {
             position: relative;
             // r
-            height: 350rem;
-            width: 100%;
+            height: 300rem;
+            width: 100vw;
 
             .quick_menu {
                 display: none;
             }
 
+            // r
             .main_video {
+                width: 100%;
+                height: 100%;
+
                 .ctr {
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(0, calc(-50% + 100px));
-                    margin: 560rem 0 0 -585rem;
+                    transform: translate(-50%, -50%);
+                    margin: 120rem 0 0 0;
 
                     span {
-                        font-size: 56rem;
+                        font-size: 36rem;
                         color: $color-white;
                         cursor: pointer;
                     }
@@ -402,7 +393,7 @@
                         background: $color-white;
 
                         .img_box {
-                            height: 400rem;
+                            height: 300rem;
                             overflow: hidden;
 
                             margin: 0 0 24rem 0;
@@ -425,10 +416,12 @@
 
                         .txt_box {
                             padding: 0 20rem;
+                            height: 100%;
+                            width: 100%;
 
                             strong {
                                 display: block;
-                                font-size: 32rem;
+                                font-size: 24rem;
                                 font-weight: 600;
                                 line-height: 30rem;
                                 margin: 0 0 22rem 0;
@@ -521,13 +514,13 @@
 
                 .f_news {
                     width: 100%;
-                    height: 200rem;
                     background: $color-white;
                     box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
                     position: relative;
 
                     &.fn01 {
                         grid-area: f_n01;
+                        height: 220rem;
 
                         .card {
                             border-top: 4rem solid $color-main;
@@ -562,7 +555,7 @@
                     &.fn02 {
                         grid-area: f_n02;
                         position: relative;
-
+                        height: 100%;
 
                         .card {
                             border-top: 4rem solid $color-main;
