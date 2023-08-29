@@ -1,5 +1,6 @@
 @import './mixins';
 
+
 .Header {
 
 
@@ -356,6 +357,7 @@
         #MainNews {
             background: #f4f4f4;
 
+
             .content {
                 display: grid;
                 grid-gap: 36rem;
@@ -365,9 +367,9 @@
                     "r_n02"
                     "f_n01"
                     "f_n02";
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
                 max-width: 1200rem;
-                padding: 15rem;
+
 
                 .news_slide {
                     position: relative;
@@ -636,7 +638,7 @@
                     "f_n01"
                     "f_n02"
                     "fr_nl";
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
                 max-width: 1200rem;
                 padding: 15rem;
 
@@ -670,7 +672,7 @@
 
                         display: grid;
                         // r
-                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
 
 
                         .img_box {
@@ -797,12 +799,8 @@
                 }
 
                 .fr_re_newslist {
-                    position: relative;
-                    grid-area: fr_nl;
                     width: 100%;
-                    height: 400rem;
-                    background: $color-white;
-                    box-shadow: 2px 2px 28px 3px rgb(0 0 0 / 9%);
+                    height: 100%;
 
                     >ul {
                         display: flex;
@@ -871,7 +869,7 @@
                 display: grid;
                 grid-gap: 36rem;
                 // r
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
                 max-width: 1200rem;
 
                 .event_slide {
@@ -952,7 +950,6 @@
                 }
 
                 .fr_ev_newslist {
-
                     width: 100%;
                     height: 100%;
 
@@ -1016,10 +1013,11 @@
 // r
 .Footer {
     @include responsive(sl) {
+
         .ft_top_area {
 
             height: 104rem;
-            font-size: 16rem;
+            font-size: 14rem;
             line-height: 20rem;
             padding: 16rem 0;
 
@@ -1035,7 +1033,7 @@
 
         .content {
             .ft {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 40rem;
 
                 .right {

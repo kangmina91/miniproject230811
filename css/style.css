@@ -1540,9 +1540,8 @@ p {
     display: grid;
     grid-gap: 36rem;
     grid-template-areas: "s_n" "r_n01" "r_n02" "f_n01" "f_n02";
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
     max-width: 1200rem;
-    padding: 15rem;
   }
   .Main #MainNews .content .news_slide {
     position: relative;
@@ -1735,7 +1734,7 @@ p {
     display: grid;
     grid-gap: 36rem;
     grid-template-areas: "s_n" "f_n01" "f_n02" "fr_nl";
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
     max-width: 1200rem;
     padding: 15rem;
   }
@@ -1762,7 +1761,7 @@ p {
     border-top: 4rem solid #760023;
     background: #fff;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
   }
   .Main #MainResearch .content .research_slide .itm .img_box {
     height: 300rem;
@@ -1859,12 +1858,8 @@ p {
     font-weight: 600;
   }
   .Main #MainResearch .content .fr_re_newslist {
-    position: relative;
-    grid-area: fr_nl;
     width: 100%;
-    height: 400rem;
-    background: #fff;
-    box-shadow: 2px 2px 28px 3px rgba(0, 0, 0, 0.09);
+    height: 100%;
   }
   .Main #MainResearch .content .fr_re_newslist > ul {
     display: flex;
@@ -1907,7 +1902,7 @@ p {
   .Main #MainEvent .content {
     display: grid;
     grid-gap: 36rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
     max-width: 1200rem;
   }
   .Main #MainEvent .content .event_slide {
@@ -2019,7 +2014,7 @@ p {
 @media only screen and (max-width: 767.98px) {
   .Footer .ft_top_area {
     height: 104rem;
-    font-size: 16rem;
+    font-size: 14rem;
     line-height: 20rem;
     padding: 16rem 0;
   }
@@ -2030,7 +2025,7 @@ p {
     text-align: center;
   }
   .Footer .content .ft {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40rem;
   }
   .Footer .content .ft .right .fm {
