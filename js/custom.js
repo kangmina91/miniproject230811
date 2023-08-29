@@ -90,9 +90,9 @@ $(function () {
   $('.gnb>.depth1>li>a').on('click', function (e) {
     if ($('.Header .gnb').hasClass('on')) {
       e.preventDefault();
+      $(this).next().stop().slideToggle();
+      $(this).parent().siblings().find('.Header .gnb .depth2').stop().slideUp();
     }
-    $(this).next().stop().slideToggle();
-    $(this).parent().siblings().find('.Header .gnb .depth2').stop().slideUp();
   });
 
 
@@ -110,7 +110,7 @@ $(function () {
 
   $(window).on('resize', function () {
     $('.Header .gnb .depth2').removeAttr('style');
-
+    $('.Header .gnb').removeClass('on');
   });
 
 });
