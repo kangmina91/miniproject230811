@@ -299,7 +299,7 @@ p {
   /* 아이폰 반응형 대응 방식 */
   html {
     /* vw 390인 디바이스를 기준으로 폰트 사이즈를 pc에서 쓰는 rem과 동일하게 만드는 법 */
-    font-size: 0.2564102564vw;
+    font-size: 1px;
     /* 390 size에 맞춤 (16/390*6.25/100) 디자인 사이즈 */
   }
 }
@@ -351,21 +351,6 @@ p {
   cursor: pointer;
 }
 
-@media (max-width: 860px) {
-  html {
-    font-size: 0.1302083333vw;
-  }
-}
-@media (max-width: 1023px) {
-  html {
-    font-size: 0.0977517107vw;
-  }
-}
-@media (max-width: 1480px) {
-  html {
-    font-size: 0.0675675676vw;
-  }
-}
 .Header {
   position: relative;
   top: 0;
